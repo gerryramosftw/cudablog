@@ -21,7 +21,6 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
 
 
 </head>
@@ -41,8 +40,9 @@
         <!--        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	-->	<div class="col-xs-12">
                     <div class="post-heading">
-                        <h1>Top Issues you will run into when it comes to the spam firewall</h1>
+                        <h1>ESS TRAINING - Email sent out to a customer today to explain the ESS delay issues</h1>
                         <h2 class="subheading">
+			
 			</h2>
                         <span class="meta">Posted by <a href="#">Gerry Ramos</a> on April 8, 2016</span>
                     </div>
@@ -50,46 +50,63 @@
             </div>
         </div>
     </header>
-    <section id="services">
+
+    <!-- Post Content -->
+    <article>
         <div class="container">
             <div class="row">
-                <div class=" col-lg-12 text-center">
-                    <h2 class="section-heading">There will be hundreds of different issues you run into, all of them can be boiled down into about
-                        6 or 7 key root causes though.</h2>
-                    <hr class="primary">
-                <h3>These are the common root problems:</h3>
-<br>                </div>
+                <!--<div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-1">
+		-->		<div class="col-xs-9 col-xs-offset-1">
+		<h2 class="section-heading">Sample Email about these delays</h2>
+		<br>
+<p>Customer,
+</p>
+<p>This is a follow-up to the voicemail messages that I left your earlier today
+</p>
+<p>The previous tech that you worked with unfortunately gave you incorrect information about the delays you are seeing in your inbound mail.
+
+<p>To explain what is going on I would like to explain to you how the ESS service works.
+</p>
+<p>The MX record for your domain points to 
+</p><pre>
+  d30928a.ess.barracudanetworks.com
+  d30928b.ess.barracudanetworks.com
+
+Both of these records point to the following IP addresses (which change from time to time)
+
+  64.235.153.10
+  64.235.154.105
+  64.235.150.252
+  64.235.153.2
+</pre>
+<p>Each of these IP's is a load balancer and each load balancer points to dozens of MX (mail) servers.
+</p>
+<p>When senders connect to your IP address they hit the first IP address in the list. If they get a "Connection Refused" error (all the servers behind the load balancer are busy) the sending mail server will roll to the next IP and try that connection and so on until they get a connection to one of our MX servers.
+</p>
+<p>The problem that we are seeing is that occasionally the connection is returning to our load balancer is returning 
+</p>
+<p>  Connected to mail14.ess.barracuda.com (64.235.154.105).
+  Escape character is '^]'.
+  Connection closed by foreign host.
+</p>
+<p>This causes the sending mail server to drop the connection and defer the mail. 
+</p>
+<p>One of the problems we are seeing is that when this error happens the sending server continues to retry the mail to this same IP over an over usually getting this same error for quite some time which results in a delay in your incoming mail.
+</p>
+<p>We are working to find out why this error is being returned and are also monitoring our service much closer watching for when this error happens so we can reset or bypass the server(s) that are causing this problem.
+</p>
+<p>If you have any questions on this or need additional information please let me know
+</p>
+<p>
+  Sincerely,
+</p>
+
+		    </div>
             </div>
         </div>
-        <div class="container">
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-envelope wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Designed for real-time application</h3>
-                        <p class="text-muted">You will be hard pressed to find a solution for "How to prove barracuda is not delaying customer's email" in an
-                        in depth fashion as this website does.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-database wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Designed for cohesion and efficiency</h3>
-                        <p class="text-muted">Usually problems that occur RIGHT NOW do not have solutions yet because they are new or are bugs that need to be submitted.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-university wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3>Information from Tier 3/Engineering</h3>
-                        <p class="text-muted">Usually these "solutions" to common immediate problems are sent via email,
-                        however these easily get lost in the fray and everybody's inboxes is not the proper place to store this valuable information.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </article>
+
+    <hr>
 
     <!-- Footer -->
 

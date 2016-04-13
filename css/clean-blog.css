@@ -23,7 +23,7 @@ h4,
 h5,
 h6 {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-weight: 400;
+  font-weight: 800;
 }
 a {
   color: #404040;
@@ -40,6 +40,14 @@ blockquote {
   color: #808080;
   font-style: italic;
 }
+.articleheading {
+	font-size: 28px;
+}
+.articlesubheading {
+	font-size:20px;
+	font-weight:100;
+}
+
 hr.small {
   max-width: 100px;
   margin: 15px auto;
@@ -140,20 +148,19 @@ hr.small {
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin-bottom: 0px;
-  padding:0 0 100px 0;
+  margin-bottom: 50px;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
 .intro-header .page-heading {
-  padding: 100px 0 0px;
+  padding: 100px 0 50px;
   color: white;
 }
 @media only screen and (min-width: 768px) {
   .intro-header .site-heading,
   .intro-header .post-heading,
   .intro-header .page-heading {
-    padding: 150px 0 0 0;
+    padding: 150px 0;
   }
 }
 .intro-header .site-heading,
@@ -167,7 +174,7 @@ hr.small {
 }
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
-  font-size: 24px;
+  font-size: 15px;
   line-height: 1.1;
   display: block;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -188,10 +195,10 @@ hr.small {
   line-height: 1.1;
   display: block;
 }
-.intro-header .post-heading .subheading {
+.subheading {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 24px;
-  margin: 10px 0 0px;
+  font-size: 14px;
+  margin: 10px 0 30px;
   font-weight: 600;
 }
 .intro-header .post-heading .meta {
@@ -208,7 +215,7 @@ hr.small {
     font-size: 55px;
   }
   .intro-header .post-heading .subheading {
-    font-size: 30px;
+    font-size: 18px;
   }
 }
 .post-preview > a {
@@ -220,11 +227,11 @@ hr.small {
   color: #0085a1;
 }
 .post-preview > a > .post-title {
-  font-size: 30px;
+  font-size: 10px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
-.post-preview > a > .post-subtitle {
+.post-subtitle {
   margin: 0;
   font-weight: 300;
   margin-bottom: 10px;
@@ -246,11 +253,11 @@ hr.small {
 }
 @media only screen and (min-width: 768px) {
   .post-preview > a > .post-title {
-    font-size: 36px;
+    font-size: 20px;
   }
 }
 .section-heading {
-  font-size: 36px;
+  font-size: 24px;
   margin-top: 60px;
   font-weight: 700;
 }
@@ -394,34 +401,3 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #0085a1;
 }
-
-
-.btn-dark {
-    border-radius: 0;
-    color: #fff;
-    background-color: rgba(0,0,0,0.4);
-    margin: 15px 0 30px 0;
-}
-
-.btn-dark:hover,
-.btn-dark:focus,
-.btn-dark:active {
-    color: #fff;
-    background-color: rgba(0,0,0,0.7);
-}
-
-.btn-light {
-    border-radius: 0;
-    color: #333;
-    background-color: rgb(255,255,255);
-    margin: 15px 0 30px 0;
- 
-}
-
-.btn-light:hover,
-.btn-light:focus,
-.btn-light:active {
-    color: #333;
-    background-color: rgba(255,255,255,0.8);
-}
-

@@ -21,7 +21,6 @@
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
 
 
 </head>
@@ -41,8 +40,9 @@
         <!--        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	-->	<div class="col-xs-12">
                     <div class="post-heading">
-                        <h1>Top Issues you will run into when it comes to the spam firewall</h1>
+                        <h1>ESS delays in incoming mail - again</h1>
                         <h2 class="subheading">
+			
 			</h2>
                         <span class="meta">Posted by <a href="#">Gerry Ramos</a> on April 8, 2016</span>
                     </div>
@@ -50,46 +50,49 @@
             </div>
         </div>
     </header>
-    <section id="services">
+
+    <!-- Post Content -->
+    <article>
         <div class="container">
             <div class="row">
-                <div class=" col-lg-12 text-center">
-                    <h2 class="section-heading">There will be hundreds of different issues you run into, all of them can be boiled down into about
-                        6 or 7 key root causes though.</h2>
-                    <hr class="primary">
-                <h3>These are the common root problems:</h3>
-<br>                </div>
+                <!--<div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-1">
+		-->		<div class="col-xs-9 col-xs-offset-1">
+		<h2 class="section-heading">This is an internal solution for now.</h2>
+		<br>
+		<pre style="width: 900px;font-size:14px">
+Seems that not everyone is reading the chat room or the emails I send out so will try once again
+
+We DO have, and HAVE had delay issues with ESS for about 2 weeks now.
+
+Our servers are returning a "Connection closed by foreign host" error which results in the sending mail server
+deferring the mail and retrying
+
+UNFORTUNATELY the sending server does not ROLL over to the next IP in our list it continues to try 
+the same IP because it got a connection the last time.
+
+64.235.154.105
+64.235.153.10
+64.235.153.2
+64.235.150.252
+
+Roll-Over on a DNS server only happens if the last connection timed out or they got a "connection refused" error
+
+I've explained this in a couple of emails already and in the BESS chat room a dozen times.
+
+Engineering is currently working on the problem but as of this morning still do not have a solution.
+
+
+
+Michael Exner
+Tier III Support Engineer
+
+		</pre>   
+		    </div>
             </div>
         </div>
-        <div class="container">
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-envelope wow bounceIn text-primary" data-wow-delay=".1s"></i>
-                        <h3>Designed for real-time application</h3>
-                        <p class="text-muted">You will be hard pressed to find a solution for "How to prove barracuda is not delaying customer's email" in an
-                        in depth fashion as this website does.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-database wow bounceIn text-primary" data-wow-delay=".2s"></i>
-                        <h3>Designed for cohesion and efficiency</h3>
-                        <p class="text-muted">Usually problems that occur RIGHT NOW do not have solutions yet because they are new or are bugs that need to be submitted.
-                        </p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="service-box">
-                        <i class="fa fa-4x fa-university wow bounceIn text-primary" data-wow-delay=".3s"></i>
-                        <h3>Information from Tier 3/Engineering</h3>
-                        <p class="text-muted">Usually these "solutions" to common immediate problems are sent via email,
-                        however these easily get lost in the fray and everybody's inboxes is not the proper place to store this valuable information.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    </article>
+
+    <hr>
 
     <!-- Footer -->
 
