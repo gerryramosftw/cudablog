@@ -15,7 +15,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/styles.min.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -40,7 +40,7 @@
         <!--        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 	-->	<div class="col-xs-12">
                     <div class="post-heading">
-                        <h1>ESS delays in incoming mail - again</h1>
+                        <h1>How to tackle SSL Certificate Issues</h1>
                         <h2 class="subheading">
 			
 			</h2>
@@ -57,54 +57,34 @@
             <div class="row">
                 <!--<div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-1">
 		-->		<div class="col-xs-9 col-xs-offset-1">
+		<h2 class="section-heading">Alright SSL Certificates!</h2>
+		<h4 class="section-subheading">Issue: CheckTLS is failing even though cert seems to be uploaded properly</h4>
+		<p>These are a little bit intimidating in the beginning because they CAN be confusing
+		but honestly they aren't that hard at all, there is pretty much a process for things you need to check
+		when you see an SSL certificate <kbd>failing check tls</kbd> or showing <kbd>untrusted or missing chain file</kbd></p>
 
-		<h3 class="section-heading">4/13/2016 Update</h3>
-<p>Yesterday engineering made some major changes to the ESS service.
-</p>
-<p>As a result this morning for the first time we did not see any of our ESS servers return the "Connection closed by foreign host" error and we did not see any delays in the delivery of mail.
-</p>
-<p>The problem is not resolved but engineering is making headway in finding out what is causing it.
-</p>
-<p>Thank you,
-</p>
+		<h3 class="section-subheading">SSL Errors will come in a VARIETY of errors!</h3>
+		<p>however luckily for you the fixes usually reside
+                in one of these questions being answered and verified:</p>
+		<p>1) Does the common name match the hostname of the Barracuda unit?</p>
+		<p>2) Is the bundle built correctly and complete?</p>
+		<p>3) Does the certificate and key match? (Check with sslshopper.com)</p>
+		<h3 class="section-subheading">Once these questions have been answered and verified, you will most likely would have found the problem</h3>
+		<p>Otherwise you are potentially looking at an escalation -- ONLY once these have been verified and all troubleshooting has been
+		exhausted!</p>
 
-<p>Michael Exner</p>
-<p>Tier III Support Engineer</p>
-
-		<h2 class="section-heading">This is an internal solution for now.</h2>
-		<br>
-		<pre style="width: 900px;font-size:14px">
-Seems that not everyone is reading the chat room or the emails I send out so will try once again
-
-We DO have, and HAVE had delay issues with ESS for about 2 weeks now.
-
-Our servers are returning a "Connection closed by foreign host" error which results in the sending mail server
-deferring the mail and retrying
-
-UNFORTUNATELY the sending server does not ROLL over to the next IP in our list it continues to try 
-the same IP because it got a connection the last time.
-
-64.235.154.105
-64.235.153.10
-64.235.153.2
-64.235.150.252
-
-Roll-Over on a DNS server only happens if the last connection timed out or they got a "connection refused" error
-
-I've explained this in a couple of emails already and in the BESS chat room a dozen times.
-
-Engineering is currently working on the problem but as of this morning still do not have a solution.
+		<h4 class="section-subheading">Now for the troubleshooting!</h4>
+		<p>For example in this case we see that in the GUI <kbd>Advanced --&gt; Secure Administration</kbd> the cert seems to be uploaded properly</p>
+		<img src="img/sslcert6.PNG" class="img-responsive">
+		<img src="img/sslcert1.PNG" class="img-responsive">
+		<p>but however if we look at checktls, boom! the error says fail. now let's troubleshoot why.  Assuming that it HAS been uploaded properly
+		one of the most common issues and common questions is the relation between the common name to give to the certificate and what it
+		should be, it's very important to note that the <kbd>common name of the certificate HAS to match the hostname</kbd> given to the barracuda unit.</p>
 
 
 
-Michael Exner
-Tier III Support Engineer
 
-		</pre>   
-
-
-
-		    </div>
+	     		    </div>
             </div>
         </div>
     </article>
