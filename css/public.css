@@ -1,0 +1,64 @@
+/* Site Colors:
+  #1A446C - blue grey
+  #689DC1 - light blue
+  #D4E6F4 - very light blue
+  #EEE4B9 - light tan
+  #8D0D19 - burgundy
+*/
+
+html { height: 100%; width: 100%; }
+body {
+  width: 100%; height: 100%; 
+  margin: 0; padding: 0; border: 0;
+  font-family: Lora, Helvetica, Helvetica, sans-serif; 
+  font-size: 17px; line-height: 25px;
+  background: #fff;
+}
+img { border: none; }
+a { color: #000; }
+a:hover { color: #337ab7; }
+	
+#header { 
+	height: 70px;
+	padding: 0 0 30px 0; 
+	margin: 0; padding: 0; text-align: left; 
+  background: #1A446C; color: #D4E6F4;
+}
+#header h1 { padding: 30px 0 20px 0; margin: 0; }
+
+#main { 
+	height: 600px; width: 100%; 
+	margin: 0; padding: 0; 
+	background: #fff;
+}
+#footer { 
+	clear: both;
+	height: 2em; margin: 0; padding: 1em; 
+	text-align: center; 
+  background: #1A446C;  color: #D4E6F4;
+}
+
+/* Navigation */
+#navigation { 
+	float: left;
+	width: 250px; height: 100%; 
+	margin: 0; padding: 0 2em; 
+	color: #D4E6F4; background: #337ab7;
+}
+#navigation a { color: #D4E6F4; text-decoration: none; }
+#navigation a:hover { color: #FFFFFF; }
+ul.subjects { 
+	margin: 1em 0; padding-top:30px; padding-left: 0; list-style: none;
+}
+ul.pages { padding-left: 2em; padding-top:30px; list-style: square; }
+.selected { font-weight: bold; }
+
+/* Page Content */
+#page { 
+	float: left; height: 100%;
+	padding-left: 2em; vertical-align: top; 
+	background: #fff;
+}
+#page h2 { color: #000; margin-top: 1em;}
+#page h3 { color: #8D0D19; }
+
