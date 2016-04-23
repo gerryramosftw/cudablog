@@ -27,12 +27,12 @@
 
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
-    <div class="intro-header" style="background-image: url('img/bsf_hero.jpg')">
+    <div class="intro-header" style="background-image: url('img/bsf_hero.jpg'); height:200px">
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <div class="site-heading">
-                        <h1 style="font-weight:800;">The Resource for Barracuda Technicians</h1>
+                    <div class="site-heading" style="padding: 50px 0 0 0">
+                        <h1 style="font-weight:800;font-size: 40px;padding: 0 0 0 0">The Resource for Barracuda Technicians</h1>
                         <hr class="small">
                         <span class="subheading">Please address questions or additions to this site to <strong>gramos</strong>.</span>
                     </div>

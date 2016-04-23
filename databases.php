@@ -1,10 +1,11 @@
+<?php include("layouts/header.php"); ?>
 <?php
   // 1. Create a database connection
 
   $dbhost = "localhost";
-  $dbuser = "widget_cms";
+  $dbuser = "root";
   $dbpass = "password";
-  $dbname = "widget_corp";
+  $dbname = "cudaposts";
   $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
   // Test if connection occurred.
   if(mysqli_connect_errno()) {
@@ -16,16 +17,14 @@
 ?>
 
 <?php
-	// 2. Perform database query
-	$query  = "SELECT * ";
-	$query .= "FROM subjects ";
-	$query .= "WHERE visible = 1 ";
-//	$query .= "ORDER BY position ASC";
-	$result = mysqli_query($connection, $query);
-	// Test if there was a query error
-	if (!$result) {
-		die("Database query failed.");
-	}
+/*
+$query = "select sol_title from solution_posts";
+$result = mysqli_query($connection,$query);
+if (!$result){
+die("Database query has failed.");
+}
+*/
+
 ?>
 
 
@@ -39,50 +38,33 @@
 	<body>
 
 	<h1>Page is working properly</h1>
-		<?php
-			// 3. Use returned data (if any)
-			while($row = mysqli_fetch_assoc($result)) {
-				// output data from each row
-				echo "the id is " . $row["id"] . "<br />";
-				echo "the menu name is " . $row["menu_name"] . "<br />";
-				echo "the position is " . $row["position"] . "<br />";
-				echo "the visible is " . $row["visible"] . "<br />";	
-				echo "<br>";
-				echo "<hr />";
-			}
-		?>
-
-		<?php
-		 // 4. Release returned data
-		 mysqli_free_result($result);
-		?>
 <?php
-        // 2. Perform database query
-	$vis = 1;
-        $query  = "SELECT * ";
-        $query .= "FROM pages ";
-        $query .= "WHERE visible = $vis ";
-//      $query .= "ORDER BY position ASC";
-        $result = mysqli_query($connection, $query);
-        // Test if there was a query error
-        if (!$result) {
-                die("Database query failed.");
-        }
+$query = "select sol_title from solution_posts";
+$result = mysqli_query($connection,$query);
+if (!$result){
+die("Database query has failed.");
+}
+
+
 ?>
 
-
-<?php
+	<?php
 	while ($row = mysqli_fetch_assoc($result)){
-	 echo "The content of: " . $row["menu_name"] . "is " . $row["content"] . "<br />";
-	 echo "<hr />";
+	echo $row["sol_title"];	
+	echo "<hr />";
+	}
+	?>
+	<?php //mysqli_free_result($result); ?>
+
+<?php $query2="select post from solution_posts order by id desc"; ?>
+<?php $result2 = mysqli_query($connection, $query2); ?>
+<?php
+	for ($i=0;$i<3;$i++){
+	$row2 = mysqli_fetch_assoc($result2);
+	echo $row2["post"];
+	echo "<hr>";
 	}
 ?>
-
-<?php
-	mysqli_free_result($result);
-?>
-
-
 	</body>
 </html>
 
