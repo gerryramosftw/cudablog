@@ -18,14 +18,21 @@
 		<pre>
                 <?php
 
-		
                  $username = $_POST["username"];
                  $password = $_POST["password"];
-
                  echo "{$username}: {$password}";
+            $name = "username";
+            $value = $username;
+            $expire = time() + (60*60*24*7);
+            setcookie($name, $value, $expire);
+            $pass = "password";
+            $pass_value = "$password";
+            setcookie($pass, $pass_value, $expire);
 
+            
                 if ($username == "admin" && $password == "secret") {
                         redirect_to("homep.php");
+                echo '<a href="homep.php">Click here to proceed to the website</a>';
                 } else {
                         redirect_to("nopass.php");
                 }

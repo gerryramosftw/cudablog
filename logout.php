@@ -55,7 +55,8 @@
         setcookie($name, $value, $expire);
 
     ?>
-
+        <hr>
+        <a href="index.php"><h3>Click here to log back in again</h3><a>
 <!--
         <form action="form_processing.php" method="post">
           Username: <input type="text" name="username" value="" /><br />

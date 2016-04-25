@@ -111,6 +111,7 @@
             <div class="row">
 		<div class="col-xs-6 col-xs-offset-3" style="white-space: pre;">
                 <br>
+    <!-- GET THE HEADER -->
 		<?php
 		global $connection;
 		$safe_header = $_POST["header"];
@@ -120,6 +121,7 @@
 		$query = "insert into solution_posts (sol_title, post) values ('{$safe_header}', '{$safe_content}')";
 		mysqli_query($connection, $query);
 		?>
+    <!-- GET THE POST -->
         <!-- Lets display our data -->
         <?php $query2="select * from solution_posts order by id desc limit 1"; ?>
         <?php $result2 = mysqli_query($connection, $query2); ?>
@@ -128,6 +130,7 @@
         $theid = $result["id"];
         echo "The id is: " . $theid . "<br>";
         ?>
+    <!-- GET THE SUBHEADING -->
                 <br>
                     </div>
             </div>

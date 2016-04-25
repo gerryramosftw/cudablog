@@ -30,10 +30,10 @@
         <body style="background-color:#235;">
 
         <div class="container">
-                <p style="color:#fff">Welcome to Gerry's Psuedo
-		<div class="container-fluid">
+		<div class="container-fluid" style="text-align: center">
+        <a href="index.php"><h3 style="color:#fff">I made a mistake, let me try again</h3><a>
 		<img class="img-responsive" src="img/nopass.jpg" style="margin: 100px 0 20px 0;">
-                </div>
+        </div>
 		</p>
         </div>
         </body>

@@ -14,6 +14,18 @@
     );
   }
 ?>
+<?php
+ function redirect_to($new_location){
+ header ("Location: ". $new_location);
+ exit;
+ }
+?>
+<?php
+                if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
+                } else {
+                        redirect_to("nopass.php");
+                }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,7 +53,41 @@
 
 </head>
 
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="homep.php">Back to home</a>
+            </div>
 
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="edit_submit_post.php">Create a new post</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="post.php">Sample Post</a>
+                    </li>
+                    <li>
+                        <a href="logout.php">Logout</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
     <div class="intro-header" style="background-image: url('img/bsf_hero.jpg')">
@@ -58,7 +104,7 @@
         </div>
     </div>
         <div class="bg-primary container-fluid">
-                <div class="row">
+                <div class="row" style="padding: 0 0 30px 0">
                         <div class="text-center col-xs-8 col-xs-offset-2">
                         <h2 class="section-heading">The goal is to keep the support team all on the same page.</h2>
                         <p>It is very common that there is a big problem that a Tier 1 technician cannot solve, asks a Tier 2, they solve it then it is done.
@@ -124,7 +170,7 @@
                 </div>
 
                 <div class="post-preview">
-                    <a href="post.html">
+                    <a href="post.php">
                         <h2 class="post-title">
                            Customer saying that emails are being "delayed" by barracuda unit.
                         </h2>
@@ -134,7 +180,7 @@
                     <p class="post-meta">Posted by <a href="#">Gerry Ramos</a> on April 8, 2016</p>
                 </div>
                 <div class="post-preview">
-                    <a href="post1.html">
+                    <a href="post1.php">
                         <h2 class="post-title">
                           Customer is complaining that outbound queue is high, and they rebooted the box! 
                         </h2>
@@ -167,7 +213,7 @@
     for ($i=0;$i<3;$i++){
     $row2 = mysqli_fetch_assoc($result2);
     $content ='<div class="post-preview">';
-    $content .='<a href="content_processing.php?=' . $row2["id"] . '"';
+    $content .='<a href="content_processing.php?id=' . $row2["id"] . '"';
     $content .='<h4 class="post-title">';
     $content .=$row2["sol_title"];
     $content .='</h4>';
@@ -179,13 +225,17 @@
     $content .='</a>';
     $content .='<p class="post-meta">Posted by <a href="#">Gerry Ramos</a> on April 12, 2016</p>';
     $content .='</div>';
-    $theid = 'The post ID of this is: ' . $row2["id"] . '<br>';
-    echo $theid;
+//    $theid = 'The post ID of this is: ' . $row2["id"] . '<br>';
+//    echo $theid;
     echo $content;
     
 
     }
 ?>
+    <!-- END ITERATION -->
+
+
+    <!-- take out posts
                 <div class="post-preview">
                     <a href="exnerpost2.html">
                         <h4 class="post-title">
@@ -223,11 +273,12 @@
                     </a>
                     <p class="post-meta">Posted by <a href="#">Gerry Ramos</a> on April 8, 2016</p>
                 </div>
+    -->
 
         <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
-                        <a href="#">Older Posts &rarr;</a>
+                        <a href="viewallexner.php">Older Posts &rarr;</a>
                     </li>
                 </ul>
             </div>
@@ -245,10 +296,10 @@
                 <div class="col-lg-12 text-center">
                     <h3>Learn about the Spam Firewall</h3>
 		<div class="col-xs-4 col-xs-offset-2">
-                    <a href="prodinfo.html" class="btn btn-lg btn-light">Understanding the product<br> and troubleshooting essentials</a>
+                    <a href="prodinfo.php" class="btn btn-lg btn-light">Understanding the product<br> and troubleshooting essentials</a>
 		</div>
 		<div class="col-xs-4 col-xs-offset-1">
-                    <a href="netapps.html" class="btn btn-lg btn-light">Understanding networking<br> applications</a>
+                    <a href="netapps.php" class="btn btn-lg btn-light">Understanding networking<br> applications</a>
 		</div>
                 </div>
             </div>
