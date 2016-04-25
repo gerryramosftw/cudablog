@@ -41,41 +41,7 @@
 
 </head>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="homep.php">Back to home</a>
-            </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="edit_submit_post.php">Create a new post</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="post.html">Sample Post</a>
-                    </li>
-                    <li>
-                        <a href="logout.php">Logout</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
     <div class="intro-header" style="background-image: url('img/bsf_hero.jpg')">
@@ -201,7 +167,7 @@
     for ($i=0;$i<3;$i++){
     $row2 = mysqli_fetch_assoc($result2);
     $content ='<div class="post-preview">';
-    $content .='<a href="content_processing.php?id=' . $row2["id"] . '"';
+    $content .='<a href="content_processing.php?=' . $row2["id"] . '"';
     $content .='<h4 class="post-title">';
     $content .=$row2["sol_title"];
     $content .='</h4>';
@@ -213,17 +179,13 @@
     $content .='</a>';
     $content .='<p class="post-meta">Posted by <a href="#">Gerry Ramos</a> on April 12, 2016</p>';
     $content .='</div>';
-//    $theid = 'The post ID of this is: ' . $row2["id"] . '<br>';
-//    echo $theid;
+    $theid = 'The post ID of this is: ' . $row2["id"] . '<br>';
+    echo $theid;
     echo $content;
     
 
     }
 ?>
-    <!-- END ITERATION -->
-
-
-    <!-- take out posts
                 <div class="post-preview">
                     <a href="exnerpost2.html">
                         <h4 class="post-title">
@@ -261,12 +223,11 @@
                     </a>
                     <p class="post-meta">Posted by <a href="#">Gerry Ramos</a> on April 8, 2016</p>
                 </div>
-    -->
 
         <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
-                        <a href="viewallexner.php">Older Posts &rarr;</a>
+                        <a href="#">Older Posts &rarr;</a>
                     </li>
                 </ul>
             </div>

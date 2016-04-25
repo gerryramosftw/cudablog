@@ -46,12 +46,41 @@
 
 </head>
 <body>
+    <!-- Navigation -->
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
-                <a class="navbar-brand" href="edit_submit_post.php">Back to Posting</a>
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="homep.php">Back to home</a>
             </div>
-        </nav>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="edit_submit_post.php">Create a new post</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="post.html">Sample Post</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
     <!-- Set your background image for this header on the line below. -->
     <header class="intro-header" style="background-image: url('img/bbf_hero.jpg')">
@@ -63,7 +92,9 @@
 			<!-- Let's Grab from the database -->
 			<?php
 			global $connection;
-			$query = "SELECT sol_title FROM solution_posts order by id desc limit 1";
+            $theid = $_GET["id"];
+            echo "The id for this post is: " . $theid;
+			$query = "SELECT sol_title FROM solution_posts where id={$theid} limit 1";
 			$page_header = mysqli_query($connection, $query);
 			$header = mysqli_fetch_assoc($page_header);
 			?>
@@ -78,31 +109,26 @@
         </div>
     </header>
 
-	<?php echo "hello" ?>
 
 		<!-- BEGIN POST -->
 
-    <article>
         <div class="container">
-            <div class="row" style="white-space: pre-wrap">
-                <!--<div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-1">
-                -->             <div class="col-xs-9 col-xs-offset-1">
-                <br>
-			<?php
+            <div class="row">
+                   <div class="col-xs-9 col-xs-offset-1" style="padding: 50px 0 0 0">
+			    <?php
                         global $connection;
-                        $query = "SELECT post FROM solution_posts order by id desc limit 1";
+                        $query = "SELECT post FROM solution_posts where id = {$theid} limit 1";
                         $post = mysqli_query($connection, $query);
                         $postassoc = mysqli_fetch_assoc($post);
-                        ?>
-                <?php
-                //print_r($_POST);
-		echo "The content is: " . $postassoc['post'];
                 ?>
-		<br>
+                <?php
+                echo '<div style="white-space: pre-wrap">';
+                echo $postassoc["post"];
+                echo '</div>';
+                ?>
                     </div>
             </div>
         </div>
-    </article>
 		<!-- END POST -->
 
 

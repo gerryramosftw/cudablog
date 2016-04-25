@@ -216,6 +216,7 @@ hr.small {
 }
 .post-preview > a {
   color: #404040;
+  font-size:28px;
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
@@ -247,11 +248,6 @@ hr.small {
 .post-preview > .post-meta > a:focus {
   color: #0085a1;
   text-decoration: underline;
-}
-@media only screen and (min-width: 768px) {
-  .post-preview > a > .post-title {
-    font-size: 28px;
-  }
 }
 .section-heading {
   font-size: 36px;

@@ -40,6 +40,41 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
 
 </head>
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="homep.php">Back to home</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="edit_submit_post.php">Create a new post</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="post.html">Sample Post</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
 
 
     <!-- Page Header -->
@@ -64,8 +99,6 @@
                 <div class="row">
                         <div class="text-center col-xs-8 col-xs-offset-2">
                         <h2 class="section-heading">Your post has been submitted</h2>
-                        <p>Atleast let us hope so.
-                        </p>
                         </div>
                 </div>
 
@@ -74,11 +107,9 @@
 
                 <!-- BEGIN POST -->
 
-    <article>
         <div class="container">
             <div class="row">
-                <!--<div class="col-lg-10 col-lg-offset-2 col-md-10 col-md-offset-1">
-		--> <div class="col-xs-9 col-xs-offset-1" style="white-space: pre;">
+		<div class="col-xs-6 col-xs-offset-3" style="white-space: pre;">
                 <br>
 		<?php
 		global $connection;
@@ -89,15 +120,18 @@
 		$query = "insert into solution_posts (sol_title, post) values ('{$safe_header}', '{$safe_content}')";
 		mysqli_query($connection, $query);
 		?>
-                <?php
-		echo "The header you submitted was: " . $_POST['header'] . "<br>";
-                echo "The content you submitted was: " . $_POST['content'];
-                ?>
+        <!-- Lets display our data -->
+        <?php $query2="select * from solution_posts order by id desc limit 1"; ?>
+        <?php $result2 = mysqli_query($connection, $query2); ?>
+        <?php 
+        $result = mysqli_fetch_assoc($result2); 
+        $theid = $result["id"];
+        echo "The id is: " . $theid . "<br>";
+        ?>
                 <br>
                     </div>
             </div>
         </div>
-    </article>
                 <!-- END POST -->
 
 
@@ -106,8 +140,12 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <h3></h3>
-                <div class="col-xs-4 col-xs-offset-2">
-                    <a href="content_processing.php" class="btn btn-lg btn-light">Click to View your post</a>
+                <div class="col-xs-4 col-xs-offset-4">
+                    <?php
+                    $link = '<a href="content_processing.php?id=' . $theid . '"' . 'class="btn btn-lg btn-light">Click to View your post</a>';
+                    echo $link;
+                    ?>
+
                 </div>
                 </div>
             </div>
@@ -140,4 +178,3 @@
  mysqli_close($connection);
  }
 ?>
-                   
