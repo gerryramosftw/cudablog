@@ -82,6 +82,66 @@
         <!-- /.container -->
     </nav>
 
+
+
+<?php $post_type = $_GET["post_type"]; ?>
+
+<?php if ($post_type == "tech_solution") { ?>
+
+    <!-- Set your background image for this header on the line below. -->
+    <header class="intro-header" style="background-image: url('img/bbf_hero.jpg')">
+        <div class="container">
+            <div class="row">
+             <div class="col-xs-12">
+                    <div class="post-heading">
+
+            <!-- Let's Grab from the database -->
+            <?php
+            global $connection;
+            $theid = $_GET["id"];
+            $poster = $_GET["user"];
+            echo "The id for this post is: " . $theid;
+            $query = "SELECT * FROM tech_solutions where id={$theid} limit 1";
+            $page_header = mysqli_query($connection, $query);
+            $header = mysqli_fetch_assoc($page_header);
+            ?>
+                        <h1><?php echo $header['heading']; ?></h1>
+                        <h2 class="subheading">
+                        <?php echo $header["subheading"]; ?>
+                        </h2>
+                        <span class="meta">Posted by <a href="#"><?php echo $poster; ?></a> ON date code needs to go here</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+        <!-- BEGIN POST -->
+
+        <div class="container">
+            <div class="row">
+                   <div class="col-xs-9 col-xs-offset-1" style="padding: 50px 0 0 0">
+                <?php
+                        global $connection;
+                        $query = "SELECT post FROM tech_solutions where id = {$theid} limit 1";
+                        $post = mysqli_query($connection, $query);
+                        $postassoc = mysqli_fetch_assoc($post);
+                ?>
+                <?php
+                echo '<div style="white-space: pre-wrap">';
+                echo $postassoc["post"];
+                echo '</div>';
+                ?>
+                    </div>
+            </div>
+        </div>
+        <!-- END POST -->
+
+
+
+<?php   } else {
+ ?>
     <!-- Set your background image for this header on the line below. -->
     <header class="intro-header" style="background-image: url('img/bbf_hero.jpg')">
         <div class="container">
@@ -92,17 +152,19 @@
 			<!-- Let's Grab from the database -->
 			<?php
 			global $connection;
+            $post_type = "exner";
             $theid = $_GET["id"];
+            $poster = $_GET["user"];
             echo "The id for this post is: " . $theid;
-			$query = "SELECT sol_title FROM solution_posts where id={$theid} limit 1";
+			$query = "SELECT * FROM solution_posts where id={$theid} limit 1";
 			$page_header = mysqli_query($connection, $query);
 			$header = mysqli_fetch_assoc($page_header);
 			?>
                         <h1><?php echo $header['sol_title']; ?></h1>
                         <h2 class="subheading">
-
+                        <?php echo $header["subheading"]; ?>
                         </h2>
-                        <span class="meta">Posted by <a href="#">Pull user from cookie</a> ON date code needs to go here</span>
+                        <span class="meta">Posted by <a href="#"><?php echo $poster; ?></a> ON date code needs to go here</span>
                     </div>
                 </div>
             </div>
@@ -131,9 +193,32 @@
         </div>
 		<!-- END POST -->
 
+<?php } ?>
+
+    <div class="col-xs-6 col-xs-offset-3 row">
+            <br />
+        <?php
+        $form = '<form action="edit_post.php?post_type=';
+        $form .= $post_type . '&id=' . $theid;
+        $form .='" method="post">';
+        echo $form;
+        ?>
+
+          <input type="submit" name="edit" value="Edit this post" />
+        </form>
+
+        <?php
+        $form = '<form action="delete_page.php?post_type=';
+        $form .= $post_type . '&id=' . $theid;
+        $form .='" method="post">';
+        echo $form;
+        ?>
+
+          <input type="submit" name="delete" value="Delete this post" />
+        </form>
 
 
-
+    </div>
     <hr>
 
     <!-- Footer -->

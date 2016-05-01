@@ -74,7 +74,7 @@
 
     <!-- START ITERATION OF POSTS -->
 
-<?php $query2="select * from solution_posts order by id desc"; ?>
+<?php $query2="select * from tech_solutions order by id desc"; ?>
 <?php 
     $result2 = mysqli_query($connection, $query2); 
     $formaxid = mysqli_query($connection, $query2);
@@ -86,12 +86,9 @@
     for ($i=0;$i < $maxrowid;$i++){
     $row2 = mysqli_fetch_assoc($result2);
     $content ='<div class="post-preview">';
-    $content .='<a href="content_processing.php?id=' . $row2["id"] . '"';
+    $content .='<a href="content_processing.php?id=' . $row2["id"] . '&post_type=tech_solution' . '"';
     $content .='<h4 class="post-title">';
-    $content .=$row2["sol_title"];
-    if ($row2["sol_title"] == null) {
-    break;
-    }
+    $content .=$row2["heading"];
     $content .='</h4>';
     $content .='<h3 class="post-subtitle">';
     if (isset($status)){
