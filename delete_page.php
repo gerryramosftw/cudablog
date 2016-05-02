@@ -27,10 +27,10 @@
             ?>
             <?php
                 global $connection;
-                $query = "select * from tech_solutions where id = $theid";
+                echo "The table received " . $table . "<br>";
+                echo "The id received was " . $theid . "<br>";
+                $query = "delete from $table where id = $theid";
                 $result = mysqli_query($connection, $query);
-                $result = mysqli_fetch_assoc($result);
-                echo "The tags associated with id = $theid is: " . $result["tags"] . "<br>";
             ?>
 
             </div>
