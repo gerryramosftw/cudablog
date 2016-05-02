@@ -2,9 +2,9 @@
   // 1. Create a database connection
 
   $dbhost = "localhost";
-  $dbuser = "widget_cms";
+  $dbuser = "root";
   $dbpass = "password";
-  $dbname = "widget_corp";
+  $dbname = "cudaposts";
   $connection = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname);
   // Test if connection occurred.
   if(mysqli_connect_errno()) {
@@ -16,16 +16,4 @@
 ?>
 
 
-<?php
-        // 2. Perform database query
-        $query  = "SELECT * ";
-        $query .= "FROM subjects ";
-        $query .= "WHERE visible = 1 ";
-//      $query .= "ORDER BY position ASC";
-        $result = mysqli_query($connection, $query);
-        // Test if there was a query error
-        if (!$result) {
-                die("Database query failed.");
-        }
-?>
 
