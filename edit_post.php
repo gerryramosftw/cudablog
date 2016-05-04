@@ -74,7 +74,12 @@
         <p>Content:<br />
         <textarea name="content" rows="15" cols="80"><?php echo $thedata["post"] ?></textarea>
       </p>
-       <input type="submit" name="submit" value="Submit Post" />
+        <p>Tags:<br>
+        List of tags are: spf, ldap, mysql, inoutq <br>
+        <textarea name="tags" rows="1" cols="80"><?php echo $thedata["tags"]; ?></textarea>
+        </p>
+
+      <input type="submit" name="submit" value="Submit Post" />
                 </div>
         </div>
         </body>

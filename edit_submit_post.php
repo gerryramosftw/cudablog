@@ -31,7 +31,12 @@
         </p>
 		<p>Content:<br />
         <textarea name="content" rows="15" cols="80"><?php echo "This is where you write your post" ?></textarea>
-      </p>
+        </p>
+
+        <p>Tags:<br>
+        List of tags are: spf, ldap, mysql, inoutq <br>
+        <textarea name="tags" rows="1" cols="80"><?php echo "Put your tags here"; ?></textarea>
+        </p>
        <input type="submit" name="submit" value="Submit Post" />
                 </div>
         </div>

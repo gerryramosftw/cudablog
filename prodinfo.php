@@ -85,7 +85,7 @@
                                     <strong>Difference between Inbound and Outbound queues</strong>
                                 </h4>
                                 <p>Inbound or Outbound email?!</p>
-                                <a href="#" class="btn btn-dark" style="margin:0 0 30px 0;background-color:#fff;">click to learn</a>
+                                <a href="inoutq.php" class="btn btn-dark" style="margin:0 0 30px 0;background-color:#fff;">click to learn</a>
                             </div>
                         </div>
                         <div class="col-xs-3">

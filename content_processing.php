@@ -108,6 +108,7 @@
                         <h1><?php echo $header['heading']; ?></h1>
                         <h2 class="subheading">
                         <?php echo $header["subheading"]; ?>
+                        <?php echo "Tags for this post: " . $header["tags"]; ?>
                         </h2>
                         <span class="meta">Posted by <a href="#"><?php echo $poster; ?></a> ON date code needs to go here</span>
                     </div>

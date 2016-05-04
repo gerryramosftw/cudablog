@@ -61,13 +61,14 @@
         $safe_content = mysqli_real_escape_string($connection, $safe_content);
         $safe_subheading= $_POST["subheading"];
         $safe_subheading = mysqli_real_escape_string($connection, $safe_subheading);
-
+        $safe_tags = $_POST["tags"];
+        $safe_tags = mysqli_real_escape_string($connection, $safe_tags);
     ?>
 
 		<?php 
          if ($_POST["post_type"] == "exner") {
         //$safe_subheading = mysqli_real_escape_string($connection, $safe_subheading);
-		$query = "insert into solution_posts (sol_title, subheading, post) values ('{$safe_header}','{$safe_subheading}', '{$safe_content}')";
+		$query = "insert into solution_posts (sol_title, subheading, post, tags) values ('{$safe_header}','{$safe_subheading}', '{$safe_content}','{$safe_tags}')";
 		mysqli_query($connection, $query);
 		?>
 
@@ -83,7 +84,7 @@
         } elseif ($_POST["post_type"] == "tech_solution") {
 
         // Post Tech Solution to DB
-        $query = "insert into tech_solutions (heading, subheading, post) values ('{$safe_header}','{$safe_subheading}', '{$safe_content}')";
+        $query = "insert into tech_solutions (heading, subheading, post, tags) values ('{$safe_header}','{$safe_subheading}', '{$safe_content}', '{$safe_tags}')";
         mysqli_query($connection, $query);
         //Read back the Data
         
