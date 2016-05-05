@@ -15,7 +15,7 @@
         <?php echo "current user is: " . $_COOKIE["username"]; ?>
         <?php $poster = $_COOKIE["username"]; ?>
         <?php 
-        echo '<form action="posted.php?user=';
+        echo '<form action="posted2.php?user=';
         echo $poster;
         echo '" method="post">';
         ?>

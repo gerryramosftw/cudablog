@@ -63,12 +63,13 @@
         $safe_subheading = mysqli_real_escape_string($connection, $safe_subheading);
         $safe_tags = $_POST["tags"];
         $safe_tags = mysqli_real_escape_string($connection, $safe_tags);
+        $postid = 2;
     ?>
 
 		<?php 
          if ($_POST["post_type"] == "exner") {
         //$safe_subheading = mysqli_real_escape_string($connection, $safe_subheading);
-		$query = "insert into solution_posts (sol_title, subheading, post, tags) values ('{$safe_header}','{$safe_subheading}', '{$safe_content}','{$safe_tags}')";
+		$query = "insert into solution_posts (post_type, sol_title, subheading, post, tags) values ($postid,'{$safe_header}','{$safe_subheading}', '{$safe_content}','{$safe_tags}')";
 		mysqli_query($connection, $query);
 		?>
 

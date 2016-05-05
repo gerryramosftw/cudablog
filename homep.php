@@ -115,7 +115,7 @@
 
     <!-- START ITERATION OF POSTS -->
 
-<?php $query3="select * from tech_solutions order by id desc"; ?>
+<?php $query3="select * from solution_posts where post_type = 2 order by id desc"; ?>
 <?php $result3 = mysqli_query($connection, $query3); ?>
 <?php $status = null; ?>
 <?php
@@ -124,7 +124,7 @@
     $content ='<div class="post-preview">';
     $content .='<a href="content_processing.php?id=' . $row3["id"] . '&post_type=tech_solution' . '"';
     $content .='<h4 class="post-title">';
-    $content .=$row3["heading"];
+    $content .=$row3["sol_title"];
     $content .='</h4>';
     $content .='<h3 class="post-subtitle">';
     if (isset($status)){
@@ -157,7 +157,7 @@
 
     <!-- START ITERATION OF POSTS -->
 
-<?php $query2="select * from solution_posts order by id desc"; ?>
+<?php $query2="select * from solution_posts where post_type = 1 order by id desc"; ?>
 <?php $result2 = mysqli_query($connection, $query2); ?>
 <?php $status = null; ?>
 <?php
