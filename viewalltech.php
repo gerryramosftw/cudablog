@@ -68,13 +68,13 @@
 
             <div class="col-xs-8 col-xs-offset-2">
                 <div class="bg-primary text-center">
-                <h2 class="section-heading">All posts from Exner:</h2>
+                <h2 class="section-heading">All Tech Solutions:</h2>
                 </div>
 
 
     <!-- START ITERATION OF POSTS -->
 
-<?php $query2="select * from tech_solutions order by id desc"; ?>
+<?php $query2="select * from solution_posts where post_type = 2 order by id desc"; ?>
 <?php 
     $result2 = mysqli_query($connection, $query2); 
     $formaxid = mysqli_query($connection, $query2);
@@ -88,7 +88,7 @@
     $content ='<div class="post-preview">';
     $content .='<a href="content_processing.php?id=' . $row2["id"] . '&post_type=tech_solution' . '"';
     $content .='<h4 class="post-title">';
-    $content .=$row2["heading"];
+    $content .=$row2["sol_title"];
     $content .='</h4>';
     $content .='<h3 class="post-subtitle">';
     if (isset($status)){
