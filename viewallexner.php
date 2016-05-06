@@ -74,7 +74,43 @@
 
     <!-- START ITERATION OF POSTS -->
 
-<?php $query2="select * from solution_posts order by id desc"; ?>
+<?php $query3="select * from solution_posts where post_type = 2 order by id desc"; ?>
+<?php $result3 = mysqli_query($connection, $query3); ?>
+<?php $status = null; ?>
+<?php
+    for ($i=0;$i<200;$i++){
+    $row3 = mysqli_fetch_assoc($result3);
+    $content ='<div class="post-preview">';
+    $content .='<a href="content_processing.php?id=' . $row3["id"] . '&post_type=tech_solution' . '"';
+    $content .='<h4 class="post-title">';
+    $content .=$row3["sol_title"];
+    $content .='</h4>';
+    $content .='<h3 class="post-subtitle">';
+    if (isset($status)){
+//    $content .='<span class="label label-warning">Update!</span>';
+    } //this is going to be for when you have your button for status
+    $content .= $row3["subheading"];
+    $content .='</h3>';
+    $content .='</a>';
+    $content .='<p class="post-meta">Posted by <a href="#">admin</a> on April 12, 2016</p>';
+    $content .='</div>';
+    echo $content;
+
+
+    }
+?>
+
+<?php
+    $thequery = "select * from solution_posts where post_type = 2";
+?> 
+<?php
+    $result = mysqli_query($connection, $thequery);
+    $assocarray = mysqli_fetch_assoc($result);
+    echo $assocarray["sol_title"];
+?>
+
+
+<?php $query2="select * from solution_posts where post_type = 2 order by id desc"; ?>
 <?php 
     $result2 = mysqli_query($connection, $query2); 
     $formaxid = mysqli_query($connection, $query2);
@@ -82,6 +118,9 @@
 <?php
     $themaxrowid = mysqli_fetch_assoc($formaxid);
     $maxrowid = $themaxrowid["id"];
+    echo "Max row id received was " . $maxrowid;
+    echo $result2 . "<br>";
+
 //    echo "The max row id is: " . $maxrowid;
     for ($i=0;$i < $maxrowid;$i++){
     $row2 = mysqli_fetch_assoc($result2);

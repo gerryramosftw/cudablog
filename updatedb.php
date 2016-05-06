@@ -31,14 +31,18 @@
         $safe_content = mysqli_real_escape_string($connection, $safe_content);
         $safe_subheading= $_POST["subheading"];
         $safe_subheading = mysqli_real_escape_string($connection, $safe_subheading);
+        $safe_tags = $_POST["tags"];
+        $safe_tags = mysqli_real_escape_string($connection, $safe_tags);
         $theid = $_GET["id"];
         $post_type = $_GET["post_type"];
         if ($post_type == "exner") {
-            $db_to_use = "solution_posts";
-            $head = "sol_title";
+//            $db_to_use = "solution_posts";
+//            $head = "sol_title";
+        $postid = 1;
         } elseif ($post_type == "tech_solution"){
-            $db_to_use = "tech_solutions";
-            $head = "heading";
+//            $db_to_use = "tech_solutions";
+//            $head = "heading";
+        $postid = 2;
         } else {
         echo "Post type selection failed. Exiting";
         exit;
@@ -46,9 +50,11 @@
     ?>
 
         <?php
-        echo $theid . " was the id we got. ";
-        echo $db_to_use . " is the db to use.";
-        $query = "UPDATE $db_to_use SET $head='{$safe_header}', subheading='{$safe_subheading}', post='{$safe_content}' where id = $theid";
+        echo $theid . " was the id we got. " . "<br>";
+        echo $db_to_use . " is the db to use." . "<br>";
+        echo $tags . " were the tags that we got";
+        $query = "UPDATE solution_posts SET sol_title='{$safe_header}', subheading='{$safe_subheading}'";
+        $query .= ", tags = '{$tags}', post='{$safe_content}' where id = $theid";
         echo $query;
         mysqli_query($connection, $query);
         ?>
