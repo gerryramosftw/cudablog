@@ -15,21 +15,12 @@
             <?php
 
             $theid = $_GET["id"];
-            $post_type = $_GET["post_type"];
-            if ($post_type == "exner" ) {
-             $table = 'solutions_posts';
-            } elseif ($post_type == "tech_solution") {
-             $table = 'tech_solutions';
-            } else {
-            echo "Table look up failed";
-            exit;
-            }
             ?>
             <?php
                 global $connection;
                 echo "The table received " . $table . "<br>";
                 echo "The id received was " . $theid . "<br>";
-                $query = "delete from $table where id = $theid";
+                $query = "delete from solution_posts where id = $theid";
                 $result = mysqli_query($connection, $query);
             ?>
 

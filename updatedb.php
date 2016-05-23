@@ -51,11 +51,11 @@
 
         <?php
         echo $theid . " was the id we got. " . "<br>";
-        echo $db_to_use . " is the db to use." . "<br>";
-        echo $tags . " were the tags that we got";
+//        echo $db_to_use . " is the db to use." . "<br>";
+//        echo $tags . " were the tags that we got";
         $query = "UPDATE solution_posts SET sol_title='{$safe_header}', subheading='{$safe_subheading}'";
         $query .= ", tags = '{$tags}', post='{$safe_content}' where id = $theid";
-        echo $query;
+//        echo $query;
         mysqli_query($connection, $query);
         ?>
 

@@ -1,3 +1,4 @@
+
 <?php
   // Create a database connection
 
@@ -18,6 +19,22 @@
 <?php include("layouts/header.php"); ?>
 
 <?php
+        echo "<pre>";
+        print_r($_POST);
+        echo "</pre>";
+        echo "Tag 1 is: " . $_POST["tagslist"][0] . "<br>";
+        echo "Tag 2 is: " . $_POST["tagslist"][1] . "<br>";
+        echo "Tag 3 is: " . $_POST["tagslist"][2] . "<br>";
+echo "For each starts here";
+foreach( $_POST as $stuff ) {
+    if( is_array( $stuff ) ) {
+        foreach( $stuff as $thing ) {
+            echo "The tag is: " . $thing . "<br>";
+        }
+    }
+}
+echo "<hr>";
+echo "For each ends here";
         global $connection;
         $safe_header = $_POST["header"];
         $safe_header = mysqli_real_escape_string($connection, $safe_header);

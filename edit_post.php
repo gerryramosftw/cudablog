@@ -41,19 +41,14 @@
 
         //1. Define database to be used
         if ($post_type == "tech_solution") {
-//        $db_to_use = "tech_solutions";
-//        $heading_to_use = "heading";
         $post_type = 2;
         } elseif ($post_type == "exner") {
-//        $db_to_use = "solution_posts";
-//        $heading_to_use = "sol_title";
         $post_type = 1;
         } else {
         echo "Database selection failed, can't pull the data. Yell at gramos or mheller";
         exit;
         }
 
-//        echo "The db_to_use is: " . $db_to_use;
         ?>
         <!-- Get the original data from the db -->
 
@@ -78,7 +73,7 @@
       </p>
         <p>Tags:<br>
         List of tags are: spf, ldap, mysql, inoutq <br>
-        <textarea name="tags" rows="1" cols="80"><?php echo $thedata["tags"]; ?></textarea>
+        <textarea name="tags" rows="1" cols="80"><?php echo $thedata["tags"] ?></textarea>
         </p>
 
       <input type="submit" name="submit" value="Submit Post" />

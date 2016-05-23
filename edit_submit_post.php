@@ -33,6 +33,18 @@
         <textarea name="content" rows="15" cols="80"><?php echo "This is where you write your post" ?></textarea>
         </p>
 
+        <p>Tags with Dropdown: </p>
+
+    <div>
+        <select name="tagslist[]" id="TagsSelected" multiple="multiple" class="lstSelected">
+            <option value="ldap">LDAP</option>
+            <option value="spf">SPF</option>
+            <option value="inoutq">InOut Queues</option>
+            <option value="mysql">MySQL</option>                
+        </select>
+<!--        <input type="submit" value="submit"> -->
+    </div>
+
         <p>Tags:<br>
         List of tags are: spf, ldap, mysql, inoutq <br>
         <textarea name="tags" rows="1" cols="80"><?php echo "Put your tags here"; ?></textarea>

@@ -70,10 +70,9 @@
                 <div class="bg-primary text-center">
                 <h2 class="section-heading">All posts from Exner:</h2>
                 </div>
-<div class="container">
-    <div class="jumbotron">
+    <div>
      <?php global $connection; ?>
-     <?php $query="select * from solution_posts where post_type = 2 order by id desc"; ?>
+     <?php $query="select * from solution_posts where post_type = 1 order by id desc"; ?>
      <?php
         $result = mysqli_query($connection, $query);
         if ($result){
@@ -99,12 +98,11 @@
         }
       ?>
     </div>
-</div>
 
 
     <!-- START ITERATION OF POSTS -->
 
-<?php $query3="select * from solution_posts where post_type = 2 order by id desc"; ?>
+<?php /*$query3="select * from solution_posts where post_type = 2 order by id desc"; ?>
 <?php $result3 = mysqli_query($connection, $query3); ?>
 <?php $status = null; ?>
 <?php
@@ -127,7 +125,7 @@
     echo $content;
 
 
-    }
+    } */
 ?>
 
 <?php

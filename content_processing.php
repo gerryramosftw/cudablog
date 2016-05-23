@@ -101,11 +101,11 @@
             $theid = $_GET["id"];
             $poster = $_GET["user"];
             echo "The id for this post is: " . $theid;
-            $query = "SELECT * FROM tech_solutions where id={$theid} limit 1";
+            $query = "SELECT * FROM solution_posts where id={$theid} limit 1";
             $page_header = mysqli_query($connection, $query);
             $header = mysqli_fetch_assoc($page_header);
             ?>
-                        <h1><?php echo $header['heading']; ?></h1>
+                        <h1><?php echo $header['sol_title']; ?></h1>
                         <h2 class="subheading">
                         <?php echo $header["subheading"]; ?>
                         <?php echo "Tags for this post: " . $header["tags"]; ?>
@@ -125,7 +125,7 @@
                    <div class="col-xs-9 col-xs-offset-1" style="padding: 50px 0 0 0">
                 <?php
                         global $connection;
-                        $query = "SELECT post FROM tech_solutions where id = {$theid} limit 1";
+                        $query = "SELECT post FROM solution_posts where id = {$theid} limit 1";
                         $post = mysqli_query($connection, $query);
                         $postassoc = mysqli_fetch_assoc($post);
                 ?>

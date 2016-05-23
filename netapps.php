@@ -85,7 +85,7 @@
                                     <strong>Sender Policy Framework (SPF)</strong>
                                 </h2>
                                 <p>Helpful for verifying that e-mails are being sent from TRUSTED ip's, can help spoofed messages too!</p>
-                                <a href="spfpost.php" class="btn btn-light" style="margin:0 0 30px 0;background-color:#fff;">click to learn</a>
+                                <a href="spf.php" class="btn btn-light" style="margin:0 0 30px 0;background-color:#fff;">click to learn</a>
                             </div>
                         </div>
                         <div class="col-xs-4">
@@ -98,7 +98,7 @@
                                     <strong>LDAP<br><br></strong>
                                 </h2>
                                 <p>For verifying that users that are being sent email to actually exist! No extra garbage being sent to dsafdsoafij@garbage.com</p>
-                                <a href="#" class="btn btn-light" style="margin:0 0 30px 0;background-color:#fff;">click to learn</a>
+                                <a href="ldap.php" class="btn btn-light" style="margin:0 0 30px 0;background-color:#fff;">click to learn</a>
                             </div>
                         </div>
                         <div class="col-xs-4">
@@ -111,7 +111,7 @@
                                     <strong>SSL Certificates<br><br></strong>
                                 </h2>
                                 <p>Applying SSL Certs to the Spam Firewall</p>
-                                <a href="sslpost.php" class="btn btn-light" style="margin:0 0 30px 0;background-color:#fff;">click to learn</a>
+                                <a href="ssl.php" class="btn btn-light" style="margin:0 0 30px 0;background-color:#fff;">click to learn</a>
                             </div>
                         </div>
 
