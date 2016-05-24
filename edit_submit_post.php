@@ -49,6 +49,10 @@
         List of tags are: spf, ldap, mysql, inoutq <br>
         <textarea name="tags" rows="1" cols="80"><?php echo "Put your tags here"; ?></textarea>
         </p>
+
+  <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
+  </script>
        <input type="submit" name="submit" value="Submit Post" />
                 </div>
         </div>

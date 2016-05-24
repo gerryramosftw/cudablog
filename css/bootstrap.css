@@ -1,3 +1,4 @@
+
 /*!
  * Bootstrap v3.3.6 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
@@ -1374,7 +1375,14 @@ a.text-danger:focus {
 }
 .bg-primary {
   color: #fff;
-  background-color: #337ab7;
+  background-color: #37537E;
+  box-shadow: 0 0 6px #000;
+}
+.bg-prim {
+  color: #fff;
+  background-color: #F7F7F7;
+  box-shadow: 0 0 6px #000;
+
 }
 a.bg-primary:hover,
 a.bg-primary:focus {

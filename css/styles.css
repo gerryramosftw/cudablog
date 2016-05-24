@@ -1,4 +1,4 @@
-/*!
+g*!
  * Clean Blog v1.0.5 (http://startbootstrap.com/template-overviews/clean-blog)
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
@@ -216,7 +216,7 @@ hr.small {
 }
 .post-preview > a {
   color: #404040;
-  font-size:28px;
+  font-size:20px;
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
@@ -224,7 +224,7 @@ hr.small {
   color: #0085a1;
 }
 .post-preview > a > .post-title {
-  font-size: 28px;
+  font-size: 20px;
   margin-top: 30px;
   margin-bottom: 10px;
 }
@@ -250,8 +250,8 @@ hr.small {
   text-decoration: underline;
 }
 .section-heading {
-  font-size: 36px;
-  margin-top: 60px;
+  font-size: 24px;
+  margin-top: 20px;
   font-weight: 700;
 }
 .caption {
@@ -346,7 +346,7 @@ form .row:first-child .floating-label-form-group {
   color: white;
 }
 .pager {
-  margin: 20px 0 0;
+  margin: 20px 0 20px;
 }
 .pager li > a,
 .pager li > span {

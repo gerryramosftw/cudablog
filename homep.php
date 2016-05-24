@@ -1,3 +1,5 @@
+
+
 <?php
   // 1. Create a database connection
 
@@ -26,7 +28,7 @@
                         redirect_to("nopass.php");
                 }
 ?>
-
+<?php include("layouts/header.php"); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,7 +42,7 @@
     <title>Barracuda Blog</title>
 
     <!-- Bootstrap Core CSS and Custom CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <!-- Custom CSS -->
 <!--    <link href="css/styles.min.css" rel="stylesheet">
@@ -52,65 +54,13 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
 
 </head>
-
-    <!-- Navigation -->
-    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand" href="homep.php">Back to home</a>
-            </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="edit_submit_post.php">Create a new post</a>
-                    </li>
-                    <li>
-                        <a href="about.html">About</a>
-                    </li>
-                    <li>
-                        <a href="post.php">Sample Post</a>
-                    </li>
-                    <li>
-                        <a href="logout.php">Logout</a>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
-    </nav>
-    <!-- Page Header -->
-    <!-- Set your background image for this header on the line below. -->
-    <div class="intro-header" style="background-image: url('img/bsf_hero.jpg')">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <div class="site-heading">
-                        <h1 style="font-weight:800;">The Resource for Barracuda Technicians</h1>
-                        <hr class="small">
-                        <span class="subheading">Please address questions or additions to this site to <strong>gramos</strong>.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
+<div style="background: #999"> <!-- div to start grey background -->
     <!-- START POSTS-->
-
-    <div class="container">
-        <div class="row" style="margin:0 0 50px 0">
-            <div class="col-xs-6">
+    <div class="bg-prim container">
+        <div class="row" style="padding:50px 0;margin:0 0 50px 0">
+            <div style="background: #fff;margin:0 10px 30 0" class="col-xs-4">
                 <div class="bg-primary text-center">
-                <h2 class="section-heading">Latest solutions:</h2>
+                <h2 class="section-heading">Solution Statistics:</h2>
                 </div>
 
     <!-- START ITERATION OF POSTS -->
@@ -149,9 +99,9 @@
                 </ul>
             </div>
 
-            <div class="col-xs-6">
+            <div style="background: #fff" class="col-xs-4">
                 <div class="bg-primary text-center">
-                <h2 class="section-heading">Latest news from Exner:</h2>
+                <h2 class="section-heading">Exner Statistics</h2>
                 </div>
 
 
@@ -219,7 +169,7 @@
     </aside>
 
     <!-- Troubleshooting Essentials END -->
-
+</div> <!-- this is the div for the grey background to end -->
 
 
     <section id="services">
@@ -295,7 +245,6 @@
             </div>
         </div>
     </footer>
-
 
 
     <!-- jQuery -->

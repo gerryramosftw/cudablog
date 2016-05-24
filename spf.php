@@ -1,3 +1,4 @@
+
 <?php include("layouts/header.php"); ?>
 <?php include("includes/db_connection.php"); ?>
     <div class="container">
@@ -13,7 +14,7 @@
      <?php
         $result = mysqli_query($connection, $query);
         if ($result){
-        echo "Success!";
+//        echo "Success!";
         } else {
         die("Database query failed: " . mysqli_error($connection));
         }
