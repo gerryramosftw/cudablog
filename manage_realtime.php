@@ -1,5 +1,4 @@
 
-
 <?php
   // 1. Create a database connection
   $dbhost = "localhost";
@@ -20,18 +19,17 @@
     <div id="main">
       <div id="navigation">
     <!-- Navigation -->
-
+    <br>
+    <br>
+    <p style="color:#fff">Options</p>
+<?php include("layouts/adminsidebar.php"); ?>
+    <a href="admin.php">Back to Admin Menu</a>
     </div>
       <div id="page">
-        <h2>Admin Menu</h2>
-        <p>Welcome to the admin area.</p>
-        <ul>
-          <li><a href="manage_content.php">Manage Website Content</a></li>
-          <li><a href="manage_admins.php">Manage Admin Users</a></li>
-          <li><a href="logout.php">Logout</a></li>
-        </ul>
+        <h2>Manage Real-Time Stats</h2>
+        <p>Update the Support Team about what issues to watch out for</p>
       </div>
     </div>
-<?php 
+<?php
 include("layouts/footer.php");
 ?>

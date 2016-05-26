@@ -1,8 +1,5 @@
-
-
 <?php
   // 1. Create a database connection
-
   $dbhost = "localhost";
   $dbuser = "root";
   $dbpass = "password";
@@ -57,10 +54,10 @@
 <div style="background: #999"> <!-- div to start grey background -->
     <!-- START POSTS-->
     <div class="bg-prim container">
-        <div class="row" style="padding:50px 0;margin:0 0 50px 0">
-            <div style="background: #fff;margin:0 10px 30 0" class="col-xs-4">
+        <div class="row" style="padding:50px 0px;margin:0 0 50px 0">
+            <div style="background: #fff;margin:0 10px 30px 30px" class="col-xs-4">
                 <div class="bg-primary text-center">
-                <h2 class="section-heading">Solution Statistics:</h2>
+                <h2 class="section-heading">Solution Posts:</h2>
                 </div>
 
     <!-- START ITERATION OF POSTS -->
@@ -84,10 +81,8 @@
     $content .='</h3>';
     $content .='</a>';
     $content .='<p class="post-meta">Posted by <a href="#">admin</a> on April 12, 2016</p>';
-    $content .='</div>';
+    $content .='<hr /></div>';
     echo $content;
-
-
     }
 ?>
     <!-- END ITERATION -->
@@ -98,12 +93,12 @@
                     </li>
                 </ul>
             </div>
+<!-- ROW DIV ENDS HERE -->
 
-            <div style="background: #fff" class="col-xs-4">
+            <div style="background: #fff;margin:0 10px 30 0" class="col-xs-4">
                 <div class="bg-primary text-center">
-                <h2 class="section-heading">Exner Statistics</h2>
+                <h2 class="section-heading">Exner Posts:</h2>
                 </div>
-
 
     <!-- START ITERATION OF POSTS -->
 
@@ -126,16 +121,11 @@
     $content .='</h3>';
     $content .='</a>';
     $content .='<p class="post-meta">Posted by <a href="#">Admin</a> on April 12, 2016</p>';
-    $content .='</div>';
+    $content .='<hr /></div>';
     echo $content;
-
-
     }
 ?>
     <!-- END ITERATION -->
-
-
-
         <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
@@ -143,6 +133,30 @@
                     </li>
                 </ul>
             </div>
+
+            <div style="background: #fff" class="col-xs-3">
+                <div class="bg-primary text-center">
+                <h2 class="section-heading">Support Statistics</h2>
+                </div>
+
+            <p class="realstatsheader">BESS Alerts:</p>
+            <p class="realstats">Hotmail deferring us again 
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 
+            </p>
+            <hr>
+            <p class="realstatsheader">ESG Alerts:</p>
+            <p class="realstats">None Reported
+            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            </p>
+            <hr>
+            <p class="realstatsheader">Support Alerts:</p>
+            <p class="realstats">Support Tunnel issues in Alpharetta
+            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            </p>
+
+            </div>
+
+    </div> <!--  ROW DIV ENDS HERE -->
 
 
 
@@ -178,7 +192,7 @@
                 <div class=" col-lg-12 text-center">
                     <h2 class="section-heading">"Why this website when we already have salesforce and techlib?"</h2>
                     <hr class="primary">
-		<h3>Here are three reasons:</h3>
+        <h3>Here are three reasons:</h3>
 <br>                </div>
             </div>
         </div>
@@ -252,4 +266,3 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-

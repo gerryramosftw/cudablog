@@ -1,11 +1,26 @@
-g*!
+
+
+/*!
  * Clean Blog v1.0.5 (http://startbootstrap.com/template-overviews/clean-blog)
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
+
+
+
 pre {
   font-size:16px;
   width: 950px;
+}
+
+.realstats {
+    color:#404040;
+    font-size:16px;
+}
+
+.realstatsheader{
+    font-size:20px;
+    color:#404040;
 }
 body {
   font-family: 'Lora', 'Times New Roman', serif;
