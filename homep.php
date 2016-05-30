@@ -1,3 +1,4 @@
+
 <?php
   // 1. Create a database connection
   $dbhost = "localhost";
@@ -54,7 +55,7 @@
 <div style="background: #999"> <!-- div to start grey background -->
     <!-- START POSTS-->
     <div class="bg-prim container">
-        <div class="row" style="padding:50px 0px;margin:0 0 50px 0">
+        <div class="row container-fluid" style="padding:50px 0px;margin:0 0 50px 0">
             <div style="background: #fff;margin:0 10px 30px 30px" class="col-xs-4">
                 <div class="bg-primary text-center">
                 <h2 class="section-heading">Solution Posts:</h2>

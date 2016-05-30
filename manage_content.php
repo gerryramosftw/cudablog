@@ -30,8 +30,10 @@
     <a href="admin.php">Back to Admin Menu</a>
     </div>
       <div id="page">
-        <h2>Manage Real-Time Stats</h2>
-        <p>Update the Support Team about what issues to watch out for</p>
+        <h2>Manage Post Content</h2>
+        <p>For now there is only one admin, this is where posts will be managed.<br>
+        Later on users will be able to manage their own posts.
+        </p>
       </div>
     </div>
 <?php
