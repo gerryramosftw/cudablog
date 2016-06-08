@@ -1,3 +1,5 @@
+
+
 <?php
   // Create a database connection
 
@@ -130,7 +132,7 @@
                         $postassoc = mysqli_fetch_assoc($post);
                 ?>
                 <?php
-                echo '<div style="white-space: pre-wrap">';
+                echo '<div style="/* white-space: pre-wrap */">';
                 echo $postassoc["post"];
                 echo '</div>';
                 ?>

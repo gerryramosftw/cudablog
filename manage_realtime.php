@@ -24,12 +24,26 @@
     <p style="color:#fff">Options</p>
 <?php include("layouts/adminsidebar.php"); ?>
     <a href="admin.php">Back to Admin Menu</a>
-    </div>
-      <div id="page">
-        <h2>Manage Real-Time Stats</h2>
-        <p>Update the Support Team about what issues to watch out for</p>
-      </div>
-    </div>
+       </div> <!-- END Admin Sidebar -->
+  <div id="page">
+        <h2>Create Subject</h2>
+        <div> 
+        <form action="post_realtime.php" method="post">
+          <?php 
+            global $connection;
+            $query="SELECT * from realtime where id=1";
+            $result=mysqli_query($connection,$query);
+            $result=mysqli_fetch_assoc($result)
+          ?>
+          <p>BESS Issues: <br />
+            <textarea name="content" rows="2" cols="40"><?php echo $result["rtpost"] ?></textarea>
+          </p>
+          <input type="submit" name="submit" value="Create Subject" />
+        </form>
+        <br />
+        <a href="manage_content.php">Cancel</a>
+        </div> <!-- END Form -->
+    </div> <!-- END 
 <?php
 include("layouts/footer.php");
 ?>

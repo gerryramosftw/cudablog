@@ -1,3 +1,6 @@
+
+
+
     <!-- Footer -->
     <footer style="background-color: #fff">
         <div class="container">
@@ -9,17 +12,10 @@
         </div>
     </footer>
 
-
 </html>
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-<?php
- //5. Close the database connection
- if (isset($connection)){
- mysqli_close($connection);
- }
-?>
 

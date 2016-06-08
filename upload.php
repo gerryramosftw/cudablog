@@ -7,17 +7,13 @@
       $file_tmp = $_FILES['image']['tmp_name'];
       $file_type = $_FILES['image']['type'];
       $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
-      
-      $expensions= array("jpeg","jpg","png","PNG","JPEG","JPG");
-      
+      $expensions= array("jpeg","jpg","png","PNG","JPEG","JPG","mp4","mpeg","wmv");
       if(in_array($file_ext,$expensions)=== false){
          $errors[]="extension not allowed, please choose a JPEG or PNG file.";
       }
-      
-      if($file_size > 2097152) {
-         $errors[]='File size must be excately 2 MB';
+      if($file_size > 209715200) {
+         $errors[]='File size must be excately 200 MB';
       }
-      
       if(empty($errors)==true) {
          move_uploaded_file($file_tmp,"images/".$file_name);
          echo "Success";

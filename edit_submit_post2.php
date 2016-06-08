@@ -1,5 +1,3 @@
-
-
 <?php include("layouts/header.php"); ?>
 <!DOCTYPE html PUBLIC> 
 
@@ -32,7 +30,7 @@
         <textarea name="content" rows="15" cols="80"><?php echo "This is where you write your post" ?></textarea>
         </p>
         </div> <!-- White END -->
-        <p>Tags with Dropdown: </p>
+        <p>Tags: </p>
 
     <div>
         <select name="tagslist[]" id="TagsSelected" multiple="multiple" class="lstSelected">
@@ -60,4 +58,3 @@
 
 
 <?php include("layouts/footer.php"); ?>
-

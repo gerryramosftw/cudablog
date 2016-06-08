@@ -141,18 +141,28 @@
                 </div>
 
             <p class="realstatsheader">BESS Alerts:</p>
-            <p class="realstats">Hotmail deferring us again 
-            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i> 
+            <?php $query3="select * from realtime where id=1"; ?>
+            <?php $result3 = mysqli_query($connection, $query3); ?>
+            <?php $row3 = mysqli_fetch_assoc($result3); ?>
+
+            <p class="realstats"><?php echo $row3["rtpost"]; ?> 
+            <i class="fa fa-check-square-o" aria-hidden="true" style="color:green;font-size:20px"></i> 
             </p>
             <hr>
+            <?php $query3="select * from realtime where id=2"; ?>
+            <?php $result3 = mysqli_query($connection, $query3); ?>
+            <?php $row3 = mysqli_fetch_assoc($result3); ?>
             <p class="realstatsheader">ESG Alerts:</p>
-            <p class="realstats">None Reported
-            <i class="fa fa-check-square-o" aria-hidden="true"></i>
+            <p class="realstats"><?php echo $row3["rtpost"]; ?>
+            <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:red;font-size:20px"></i>
             </p>
+            <?php $query3="select * from realtime where id=3"; ?>
+            <?php $result3 = mysqli_query($connection, $query3); ?>
+            <?php $row3 = mysqli_fetch_assoc($result3); ?>
             <hr>
             <p class="realstatsheader">Support Alerts:</p>
-            <p class="realstats">Support Tunnel issues in Alpharetta
-            <i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+            <p class="realstats"><?php echo $row3["rtpost"]; ?>
+            <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:red;font-size:20px"></i>
             </p>
 
             </div>
@@ -197,7 +207,7 @@
 <br>                </div>
             </div>
         </div>
-        <div class="container">
+        <div class="container" style="padding:0 0 30px 0">
                 <div class="col-lg-4 col-md-6 text-center">
                     <div class="service-box">
                         <i class="fa fa-4x fa-paper-plane wow bounceIn text-primary" data-wow-delay=".1s"></i>

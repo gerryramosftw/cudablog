@@ -22,6 +22,7 @@
                 echo "The id received was " . $theid . "<br>";
                 $query = "delete from solution_posts where id = $theid";
                 $result = mysqli_query($connection, $query);
+                echo "The contents of result is: " . $result . "<br />";
             ?>
 
             </div>

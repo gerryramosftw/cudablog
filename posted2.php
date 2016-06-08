@@ -25,28 +25,40 @@
         echo "Tag 1 is: " . $_POST["tagslist"][0] . "<br>";
         echo "Tag 2 is: " . $_POST["tagslist"][1] . "<br>";
         echo "Tag 3 is: " . $_POST["tagslist"][2] . "<br>";
-echo "For each starts here";
+
+
+        echo "The for loop starts here: ";
+        foreach ($_POST["tagslist"] as $tag){
+            echo "The tag is: " . $tag . "<br />";
+            echo "Holy shit its working";
+        }
+/*
 foreach( $_POST as $stuff ) {
     if( is_array( $stuff ) ) {
         foreach( $stuff as $thing ) {
             echo "The tag is: " . $thing . "<br>";
+            }
         }
     }
-}
+*/
 echo "<hr>";
 echo "For each ends here";
         global $connection;
         $safe_header = $_POST["header"];
         $safe_header = mysqli_real_escape_string($connection, $safe_header);
         $safe_content = $_POST["content"];
-        $safe_content = mysqli_real_escape_string($connection, $safe_content);
+//        $safe_content = mysqli_real_escape_string($connection, $safe_content);
         $safe_subheading= $_POST["subheading"];
         $safe_subheading = mysqli_real_escape_string($connection, $safe_subheading);
-        $safe_tags = $_POST["tags"];
+        $safe_tags = "";
+        foreach ($_POST["tagslist"] as $tag){
+        $safe_tags .= $tag . " ";
+        }
+
         $safe_tags = mysqli_real_escape_string($connection, $safe_tags);
         $postid = 2;
 //        echo "Post type received was " . $_POST["post_type"];
-        if (!isset($_POST["post_type"])) {
+        if (!isset($_POST["post_type"]) || $_POST["post_type"] =="") {
          echo "Post type must be selected, press back on your browser";
          exit;
         } elseif ($_POST["post_type"] == "exner") {

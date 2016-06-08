@@ -1,4 +1,4 @@
-<?php
+g?php
  function redirect_to($new_location){
  header ("Location: ". $new_location);
  exit;
@@ -111,7 +111,7 @@
                                     <strong>MySQL Database</strong>
                                 </h4>
                                 <p>What can I do when a database is offline?</p>
-                                <a href="mysqlpost.php" class="btn btn-dark" style="margin:0 0 30px 0;background-color:#fff;">click to learn</a>
+                                <a href="mysql.php" class="btn btn-dark" style="margin:0 0 30px 0;background-color:#fff;">click to learn</a>
                             </div>
                         </div>
 

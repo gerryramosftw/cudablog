@@ -8,6 +8,28 @@
                 <title>Form</title>
         </head>
         <body style="background: #999">
+  <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+        bkLib.onDomLoaded(function() {
+                                    nicEditors.allTextAreas()
+                                    nicEditor({fullPanel : true})
+    new nicEditor().panelInstance('area1');
+    new nicEditor({fullPanel : true}).panelInstance('area2');
+    new nicEditor({iconsPath : '../nicEditorIcons.gif'}).panelInstance('area3');
+    new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('area4');
+    new nicEditor({maxHeight : 100}).panelInstance('area5');
+                                 });
+
+
+/*bkLib.onDomLoaded(function() {
+    new nicEditor().panelInstance('area1');
+    new nicEditor({fullPanel : true}).panelInstance('area2');
+    new nicEditor({iconsPath : '../nicEditorIcons.gif'}).panelInstance('area3');
+    new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('area4');
+    new nicEditor({maxHeight : 100}).panelInstance('area5');
+});
+*/
+  </script>
+
         <div class="bg-prim container" style="background: #F7F7F7;box-shadow: 0 0 6px #000;">
                 <div class="col-xs-offset-1 col-xs-10 bg-prim">
         <?php echo "current user is: " . $_COOKIE["username"]; ?>
@@ -29,7 +51,7 @@
         <textarea name="subheading" rows="2" cols="80"><?php echo "Enter your heading here" ?></textarea>
         </p>
         <p>Content:<br />
-        <textarea name="content" rows="15" cols="80"><?php echo "This is where you write your post" ?></textarea>
+        <textarea name="content" rows="15" cols="80" id="area2"><?php echo "This is where you write your post" ?></textarea>
         </p>
         </div> <!-- White END -->
         <p>Tags: </p>
@@ -49,9 +71,6 @@
         <textarea name="tags" rows="1" cols="80"><?php echo "Put your tags here"; ?></textarea>
         </p>
 -->
-  <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
-        bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
-  </script>
        <input type="submit" name="submit" value="Submit Post" />
                 </div>
         </div>

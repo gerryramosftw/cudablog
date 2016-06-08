@@ -28,8 +28,8 @@ body {
   color: #404040;
 }
 p {
-  line-height: 1.5;
-  margin: 2px 0;
+  line-height: 1.2;
+  margin: 0px 0;
 }
 p a {
   text-decoration: underline;
@@ -44,7 +44,7 @@ h6 {
   font-weight: 400;
 }
 a {
-  color: #404040;
+  color: #337ab7;
 }
 a:hover,
 a:focus {
@@ -343,15 +343,9 @@ form .row:first-child .floating-label-form-group {
 }
 .btn {
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  text-transform: uppercase;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  border-radius: 0;
-  padding: 15px 25px;
 }
 .btn-lg {
-  font-size: 16px;
+  font-size: 20px;
   padding: 25px 35px;
 }
 .btn-default:hover,
@@ -426,7 +420,6 @@ body {
 }
 
 .btn-light {
-    border-radius: 0;
     color: #333;
     background-color: rgb(255,255,255);
     margin: 15px 0 30px 0;
