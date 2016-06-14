@@ -66,7 +66,7 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="edit_submit_post.php">Create a new post</a>
+                        <a href="demo4.php">Create a new post</a>
                     </li>
                     <li>
                         <a href="about.html">About</a>
@@ -112,7 +112,7 @@
                         <?php echo $header["subheading"]; ?>
                         <?php echo "Tags for this post: " . $header["tags"]; ?>
                         </h2>
-                        <span class="meta">Posted by <a href="#"><?php echo $poster; ?></a> ON date code needs to go here</span>
+                        <span class="meta">Posted by <a href="#"><?php echo $poster; ?></a><!-- ON date code needs to go here--></span>
                     </div>
                 </div>
             </div>
@@ -187,7 +187,7 @@
                         $postassoc = mysqli_fetch_assoc($post);
                 ?>
                 <?php
-                echo '<div style="white-space: pre-wrap">';
+                echo '<div>';
                 echo $postassoc["post"];
                 echo '</div>';
                 ?>

@@ -38,6 +38,28 @@
           <p>BESS Issues: <br />
             <textarea name="content" rows="2" cols="40"><?php echo $result["rtpost"] ?></textarea>
           </p>
+          <?php
+            global $connection;
+            $query="SELECT * from realtime where id=2";
+            $result=mysqli_query($connection,$query);
+            $result=mysqli_fetch_assoc($result)
+          ?>
+
+          <p>ESG Issues: <br />
+            <textarea name="content" rows="2" cols="40"><?php echo $result["rtpost"] ?></textarea>
+          </p>
+
+          <?php
+            global $connection;
+            $query="SELECT * from realtime where id=3";
+            $result=mysqli_query($connection,$query);
+            $result=mysqli_fetch_assoc($result)
+          ?>
+          <p>Support Issues: <br />
+            <textarea name="content" rows="2" cols="40"><?php echo $result["rtpost"] ?></textarea>
+          </p>
+
+
           <input type="submit" name="submit" value="Create Subject" />
         </form>
         <br />

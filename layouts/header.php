@@ -50,7 +50,7 @@
                     <a href="admin.php">Admin Login</a>
                    </li> 
                    <li>
-                        <a href="edit_submit_post.php">Create a new post</a>
+                        <a href="demo4.php">Create a new post</a>
                     </li>
                     <li>
                         <a href="about.html">About</a>
@@ -75,7 +75,7 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="site-heading" style="padding: 50px 0 0 0">
-                        <h1 style="font-weight:800;font-size: 40px;padding: 0 0 0 0">The Resource for Barracuda Technicians</h1>
+                        <h1 style='font-weight:800;font-size: 40px;padding: 0 0 0 0;font-family:"Myriad Pro"'>The Resource for Barracuda Technicians</h1>
                         <hr class="small">
                         <span class="subheading">Please address questions or additions to this site to <strong>gramos</strong>.</span>
                     </div>

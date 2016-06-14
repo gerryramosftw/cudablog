@@ -1,7 +1,6 @@
 
 
-<?php include("layouts/header.php"); ?>
-<!DOCTYPE html PUBLIC> 
+<?php  include("layouts/header.php"); ?>
 
 <html lang="en">
         <head>
@@ -12,25 +11,15 @@
         bkLib.onDomLoaded(function() {
                                     nicEditors.allTextAreas()
                                     nicEditor({fullPanel : true})
-    new nicEditor().panelInstance('area1');
-    new nicEditor({fullPanel : true}).panelInstance('area2');
-    new nicEditor({iconsPath : '../nicEditorIcons.gif'}).panelInstance('area3');
-    new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('area4');
-    new nicEditor({maxHeight : 100}).panelInstance('area5');
-                                 });
-
-
-/*bkLib.onDomLoaded(function() {
-    new nicEditor().panelInstance('area1');
-    new nicEditor({fullPanel : true}).panelInstance('area2');
-    new nicEditor({iconsPath : '../nicEditorIcons.gif'}).panelInstance('area3');
-    new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('area4');
-    new nicEditor({maxHeight : 100}).panelInstance('area5');
-});
-*/
+                            });
   </script>
 
-        <div class="bg-prim container" style="background: #F7F7F7;box-shadow: 0 0 6px #000;">
+<!--
+<script src="js/nicEdit.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+-->   
+
+       <div class="bg-prim container" style="background: #F7F7F7;box-shadow: 0 0 6px #000;">
                 <div class="col-xs-offset-1 col-xs-10 bg-prim">
         <?php echo "current user is: " . $_COOKIE["username"]; ?>
         <?php $poster = $_COOKIE["username"]; ?>
@@ -54,6 +43,7 @@
         <textarea name="content" rows="15" cols="80" id="area2"><?php echo "This is where you write your post" ?></textarea>
         </p>
         </div> <!-- White END -->
+
         <p>Tags: </p>
 
     <div>

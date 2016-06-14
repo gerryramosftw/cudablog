@@ -10,7 +10,7 @@
                 </div>
     <div>
      <?php global $connection; ?>
-     <?php $query='select * from solution_posts where tags like "%spf%"'; ?>
+     <?php $query='select * from solution_posts where tags like "%spf%" order by id desc'; ?>
      <?php
         $result = mysqli_query($connection, $query);
         if ($result){

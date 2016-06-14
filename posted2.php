@@ -19,7 +19,7 @@
 <?php include("layouts/header.php"); ?>
 
 <?php
-        echo "<pre>";
+/*        echo "<pre>";
         print_r($_POST);
         echo "</pre>";
         echo "Tag 1 is: " . $_POST["tagslist"][0] . "<br>";
@@ -32,6 +32,7 @@
             echo "The tag is: " . $tag . "<br />";
             echo "Holy shit its working";
         }
+*/
 /*
 foreach( $_POST as $stuff ) {
     if( is_array( $stuff ) ) {
@@ -47,7 +48,7 @@ echo "For each ends here";
         $safe_header = $_POST["header"];
         $safe_header = mysqli_real_escape_string($connection, $safe_header);
         $safe_content = $_POST["content"];
-//        $safe_content = mysqli_real_escape_string($connection, $safe_content);
+        $safe_content = mysqli_real_escape_string($connection, $safe_content);
         $safe_subheading= $_POST["subheading"];
         $safe_subheading = mysqli_real_escape_string($connection, $safe_subheading);
         $safe_tags = "";

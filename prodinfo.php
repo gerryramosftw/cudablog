@@ -1,4 +1,6 @@
-g?php
+
+
+<?php
  function redirect_to($new_location){
  header ("Location: ". $new_location);
  exit;
@@ -29,8 +31,10 @@ g?php
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/styles.min.css" rel="stylesheet">
+<!--    <link href="css/styles.min.css" rel="stylesheet">
+-->
 
+    <link href="css/styles.css" rel="stylesheet">
     <!-- Custom Fonts -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>

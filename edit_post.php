@@ -1,3 +1,5 @@
+
+
 <?php
   // Create a database connection
 
@@ -15,6 +17,20 @@
   }
 ?>
 <?php include("layouts/header.php"); ?>
+  <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> <script type="text/javascript">
+//<![CDATA[
+  bkLib.onDomLoaded(function() {
+//        new nicEditor().panelInstance('area1');
+//        new nicEditor({fullPanel : true}).panelInstance('area2');
+//        new nicEditor({fullPanel : true}).panelInstance('area7');
+        new nicEditor({fullPanel : true}).panelInstance('area8');
+        new nicEditor({iconsPath : 'js/nicEditorIcons.gif'}).panelInstance('area3');
+        new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('area4');
+        new nicEditor({maxHeight : 100}).panelInstance('area5');
+  });
+  //]]>
+  </script>
+
 <!DOCTYPE html PUBLIC>
 
 <html lang="en">
@@ -60,16 +76,16 @@
         <p>Post Title: <br>
         <textarea name="header" rows="2" cols="80"><?php echo $thedata["sol_title"] ?></textarea>
         </p>
-        <p>Type of post: <br>
+<!--        <p>Type of post: <br>
         <span class="label label-danger">NEED to select one!</span>
         Exner Post: <input type="radio" name="post_type" value="exner"/>
         Tech Solution: <input type="radio" name="post_type" value="tech_solution"/>
         </p>
-        <p>Subheading: <br>
+-->        <p>Subheading: <br>
         <textarea name="subheading" rows="2" cols="80"><?php echo $thedata["subheading"] ?></textarea>
         </p>
         <p>Content:<br />
-        <textarea name="content" rows="15" cols="80"><?php echo $thedata["post"] ?></textarea>
+        <textarea name="content" rows="15" id="area8" cols="80"><?php echo $thedata["post"] ?></textarea>
       </p>
         <p>Tags:<br>
         List of tags are: spf, ldap, mysql, inoutq <br>

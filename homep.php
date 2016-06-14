@@ -52,7 +52,8 @@
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
 
 </head>
-<div style="background: #999"> <!-- div to start grey background -->
+<body>
+<div style="background: #999; font-family:"Myriad Pro Light"> <!-- div to start grey background -->
     <!-- START POSTS-->
     <div class="bg-prim container">
         <div class="row container-fluid" style="padding:50px 0px;margin:0 0 50px 0">
@@ -90,7 +91,7 @@
        <!-- Pager -->
                 <ul class="pager">
                     <li class="next">
-                        <a href="viewalltech.php">Older Posts &rarr;</a>
+                        <a href="viewalltech2.php">Older Posts &rarr;</a>
                     </li>
                 </ul>
             </div>
@@ -137,10 +138,10 @@
 
             <div style="background: #fff" class="col-xs-3">
                 <div class="bg-primary text-center">
-                <h2 class="section-heading">Support Statistics</h2>
+                <h2 class="section-heading">Support Status</h2>
                 </div>
 
-            <p class="realstatsheader">BESS Alerts:</p>
+            <p class="realstatsheader" style="font-weight:bold">BESS Alerts:</p>
             <?php $query3="select * from realtime where id=1"; ?>
             <?php $result3 = mysqli_query($connection, $query3); ?>
             <?php $row3 = mysqli_fetch_assoc($result3); ?>
@@ -152,16 +153,23 @@
             <?php $query3="select * from realtime where id=2"; ?>
             <?php $result3 = mysqli_query($connection, $query3); ?>
             <?php $row3 = mysqli_fetch_assoc($result3); ?>
-            <p class="realstatsheader">ESG Alerts:</p>
+            <p class="realstatsheader thick">ESG Alerts:</p>
             <p class="realstats"><?php echo $row3["rtpost"]; ?>
             <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:red;font-size:20px"></i>
             </p>
+            <p class="realstats"><?php echo "New virus trend clogging the queues" ; ?>
+            <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:red;font-size:20px"></i>
+            </p>
+
             <?php $query3="select * from realtime where id=3"; ?>
             <?php $result3 = mysqli_query($connection, $query3); ?>
             <?php $row3 = mysqli_fetch_assoc($result3); ?>
             <hr>
-            <p class="realstatsheader">Support Alerts:</p>
+            <p class="realstatsheader thick">Support Alerts:</p>
             <p class="realstats"><?php echo $row3["rtpost"]; ?>
+            <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:red;font-size:20px"></i>
+            </p>
+            <p class="realstats"><?php echo "Support tunnels are down in Alpharetta"; ?>
             <i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:red;font-size:20px"></i>
             </p>
 
@@ -259,7 +267,7 @@
     <hr>
 
 
-
+</body>
     <!-- Footer -->
     <footer>
         <div class="container">

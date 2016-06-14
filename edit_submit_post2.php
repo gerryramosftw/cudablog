@@ -1,4 +1,4 @@
-<?php include("layouts/header.php"); ?>
+g?php include("layouts/header.php"); ?>
 <!DOCTYPE html PUBLIC> 
 
 <html lang="en">
@@ -51,6 +51,7 @@
         bkLib.onDomLoaded(function() { nicEditors.allTextAreas() });
   </script>
        <input type="submit" name="submit" value="Submit Post" />
+        </form>
                 </div>
         </div>
         </body>

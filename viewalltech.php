@@ -1,3 +1,5 @@
+
+
 <?php
   // 1. Create a database connection
 
@@ -101,7 +103,7 @@
 //    $theid = 'The post ID of this is: ' . $row2["id"] . '<br>';
 //    echo $theid;
     echo $content;
-
+    echo "<hr />";
 
     }
 ?>
