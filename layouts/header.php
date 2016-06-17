@@ -49,6 +49,10 @@
                    <li>
                     <a href="admin.php">Admin Login</a>
                    </li> 
+                    <li>
+                        <a href="upload2.php">Upload an Image</a>
+                    </li>
+
                    <li>
                         <a href="demo4.php">Create a new post</a>
                     </li>
@@ -77,7 +81,7 @@
                     <div class="site-heading" style="padding: 50px 0 0 0">
                         <h1 style='font-weight:800;font-size: 40px;padding: 0 0 0 0;font-family:"Myriad Pro"'>The Resource for Barracuda Technicians</h1>
                         <hr class="small">
-                        <span class="subheading">Please address questions or additions to this site to <strong>gramos</strong>.</span>
+                        <span class="subheading">Please address questions or additions to this site to <strong>gramos, dbragg or mheller</strong>.</span>
                     </div>
                 </div>
             </div>

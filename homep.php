@@ -71,7 +71,7 @@
     for ($i=0;$i<5;$i++){
     $row3 = mysqli_fetch_assoc($result3);
     $content ='<div class="post-preview">';
-    $content .='<a href="content_processing.php?id=' . $row3["id"] . '&post_type=tech_solution' . '"';
+    $content .='<a href="content_processing2.php?id=' . $row3["id"] . '"';
     $content .='<h4 class="post-title">';
     $content .=$row3["sol_title"];
     $content .='</h4>';
@@ -111,7 +111,7 @@
     for ($i=0;$i<5;$i++){
     $row2 = mysqli_fetch_assoc($result2);
     $content ='<div class="post-preview">';
-    $content .='<a href="content_processing.php?id=' . $row2["id"] . '"';
+    $content .='<a href="content_processing2.php?id=' . $row2["id"] . '"';
     $content .='<h4 class="post-title">';
     $content .=$row2["sol_title"];
     $content .='</h4>';

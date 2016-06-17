@@ -55,7 +55,7 @@
         echo "&id=$theid&post_type=$post_type";
         echo '" method="post">';
 
-        //1. Define database to be used
+/*        //1. Define database to be used
         if ($post_type == "tech_solution") {
         $post_type = 2;
         } elseif ($post_type == "exner") {
@@ -64,12 +64,12 @@
         echo "Database selection failed, can't pull the data. Yell at gramos or mheller";
         exit;
         }
-
+*/
         ?>
         <!-- Get the original data from the db -->
 
         <?php
-        $query = "select * from solution_posts where post_type = $post_type AND id = $theid";
+        $query = "select * from solution_posts where id = $theid";
         $thedata = mysqli_query($connection, $query);
         $thedata = mysqli_fetch_assoc($thedata);
         ?>
@@ -87,11 +87,23 @@
         <p>Content:<br />
         <textarea name="content" rows="15" id="area8" cols="80"><?php echo $thedata["post"] ?></textarea>
       </p>
-        <p>Tags:<br>
+<!--        <p>Tags:<br>
         List of tags are: spf, ldap, mysql, inoutq <br>
         <textarea name="tags" rows="1" cols="80"><?php echo $thedata["tags"] ?></textarea>
         </p>
+-->
+        <select size="8" name="tagslist[]" id="TagsSelected" multiple="multiple" class="lstSelected">
+            <option value="ldap">LDAP</option>
+            <option value="spf">SPF</option>
+            <option value="inoutq">InOut Queues</option>
+            <option value="mysql">MySQL</option>
+            <option value="bcas">BCAS</option>
+            <option value="bma">BMA</option>
+            <option value="quarantine">Quarantine</option>
+            <option value="behavior">Behavior</option>
 
+        </select>
+<br><br>
       <input type="submit" name="submit" value="Submit Post" />
                 </div>
         </div>

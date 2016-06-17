@@ -3,11 +3,11 @@
 $max = 5000000 * 1024;
 $message = '';
 if (isset($_POST['upload'])) {
-    $destination = __DIR__ . '/images/';
+    $destination = __DIR__ . '/videos/';
     if ($_FILES['filename']['error'] == 0) {
         $result = move_uploaded_file($_FILES['filename']['tmp_name'], $destination . $_FILES['filename']['name']);
         if ($result) {
-            $message = $_FILES['filename']['name'] . ' was uploaded successfully.' . ' Locate it here: http://10.40.139.163/cudablog/images/' . $_FILES['filename']['name'];
+            $message = $_FILES['filename']['name'] . ' was uploaded successfully.';
         } else {
             $message = 'Sorry, there was a problem uploading ' .$_FILES['filename']['name'];
         }

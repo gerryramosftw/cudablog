@@ -1,4 +1,5 @@
 
+
 /* NicEdit - Micro Inline WYSIWYG
  *  * Copyright 2007-2008 Brian Kirchoff
  *   *
@@ -114,6 +115,7 @@ var nicCodeOptions = {
 var nicCodeButton=nicEditorAdvancedButton.extend({width:"350px",addPane:function(){this.addForm({"":{type:"title",txt:"Edit HTML"},code:{type:"content",value:this.ne.selectedInstance.getContent(),style:{width:"340px",height:"200px"}}})},submit:function(B){var A=this.inputs.code.value;this.ne.selectedInstance.setContent(A);this.removePane()}});nicEditors.registerPlugin(nicPlugin,nicCodeOptions);
 
 var nicBBCode=bkClass.extend({construct:function(A){this.ne=A;if(this.ne.options.bbCode){A.addEvent("get",this.bbGet.closure(this));A.addEvent("set",this.bbSet.closure(this));var B=this.ne.loadedPlugins;for(itm in B){if(B[itm].toXHTML){this.xhtml=B[itm]}}}},bbGet:function(A){var B=this.xhtml.toXHTML(A.getElm());A.content=this.toBBCode(B)},bbSet:function(A){A.content=this.fromBBCode(A.content)},toBBCode:function(B){function A(D,C){B=B.replace(D,C)}A(/\n/gi,"");A(/<strong>(.*?)<\/strong>/gi,"[b]$1[/b]");A(/<em>(.*?)<\/em>/gi,"[i]$1[/i]");A(/<span.*?style="text-decoration:underline;">(.*?)<\/span>/gi,"[u]$1[/u]");A(/<ul>(.*?)<\/ul>/gi,"[list]$1[/list]");A(/<li>(.*?)<\/li>/gi,"[*]$1[]");A(/<ol>(.*?)<\/ol>/gi,"[list=1]$1[/list]");A(/<img.*?src="(.*?)".*?>/gi,"[img]$1[/img]");A(/<a.*?href="(.*?)".*?>(.*?)<\/a>/gi,"[url=$1]$2[/url]");A(/<br.*?>/gi,"\n");A(/<.*?>.*?<\/.*?>/gi,"");return B},fromBBCode:function(A){function B(D,C){A=A.replace(D,C)}B(/\[b\](.*?)\[\/b\]/gi,"<strong>$1</strong>");B(/\[i\](.*?)\[\/i\]/gi,"<em>$1</em>");B(/\[u\](.*?)\[\/u\]/gi,'<span style="text-decoration:underline;">$1</span>');B(/\[list\](.*?)\[\/list\]/gi,"<ul>$1</ul>");B(/\[list=1\](.*?)\[\/list\]/gi,"<ol>$1</ol>");B(/\[\*\](.*?)\[\/\*\]/gi,"<li>$1</li>");B(/\[img\](.*?)\[\/img\]/gi,'<img src="$1" />');B(/\[url=(.*?)\](.*?)\[\/url\]/gi,'<a href="$1">$2</a>');B(/\n/gi,"<br />");return A}});nicEditors.registerPlugin(nicBBCode);
+
 /*
 var nicUploadOptions = {
     buttons : {
@@ -122,7 +124,7 @@ var nicUploadOptions = {
     
 };
 */
-//var nicUploadButton=nicEditorAdvancedButton.extend({nicURI:"http://10.40.139.163/cudablog/image.php",errorText:"Failed to upload image",addPane:function(){if(typeof window.FormData==="undefined"){return this.onError("Image uploads are not supported in this browser, use Chrome, Firefox, or Safari instead.")}this.im=this.ne.selectedInstance.selElm().parentTag("IMG");var A=new bkElement("div").setStyle({padding:"10px"}).appendTo(this.pane.pane);new bkElement("div").setStyle({fontSize:"14px",fontWeight:"bold",paddingBottom:"5px"}).setContent("Insert an Image").appendTo(A);this.fileInput=new bkElement("input").setAttributes({type:"file"}).appendTo(A);this.progress=new bkElement("progress").setStyle({width:"100%",display:"none"}).setAttributes("max",100).appendTo(A);this.fileInput.onchange=this.uploadFile.closure(this)},onError:function(A){this.removePane();alert(A||"Failed to upload image")},uploadFile:function(){var B=this.fileInput.files[0];if(!B||!B.type.match(/image.*/)){this.onError("Only image files can be uploaded");return }this.fileInput.setStyle({display:"none"});this.setProgress(0);var A=new FormData();A.append("image",B);var C=new XMLHttpRequest();C.open("POST",this.ne.options.uploadURI||this.nicURI);C.onload=function(){try{var D=JSON.parse(C.responseText).data}catch(E){return this.onError()}if(D.error){return this.onError(D.error)}this.onUploaded(D)}.closure(this);C.onerror=this.onError.closure(this);C.upload.onprogress=function(D){this.setProgress(D.loaded/D.total)}.closure(this);C.setRequestHeader("Authorization","Client-ID c37fc05199a05b7");C.send(A)},setProgress:function(A){this.progress.setStyle({display:"block"});if(A<0.98){this.progress.value=A}else{this.progress.removeAttribute("value")}},onUploaded:function(B){this.removePane();var D=B.link;if(!this.im){this.ne.selectedInstance.restoreRng();var C="javascript:nicImTemp();";this.ne.nicCommand("insertImage",D);this.im=this.findElm("IMG","src",D)}var A=parseInt(this.ne.selectedInstance.elm.getStyle("width"));if(this.im){this.im.setAttributes({src:D,width:(A&&B.width)?Math.min(A,B.width):""})}}});nicEditors.registerPlugin(nicPlugin,nicUploadOptions);
+
 
 /* START CONFIG */
 var nicUploadOptions = {
@@ -134,7 +136,7 @@ var nicUploadOptions = {
 /* END CONFIG */
 
 var nicUploadButton = nicEditorAdvancedButton.extend({  
-    nicURI : 'http://10.40.139.163/cudablog/image.php',
+    nicURI : 'image.php',
   errorText : 'Failed to upload image',
 
     addPane : function() {

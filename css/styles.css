@@ -7,7 +7,9 @@
  */
 
 
-
+* {
+  font-family:"Myriad Pro Light";
+}
 pre {
   font-size:16px;
   width: 950px;
@@ -17,7 +19,11 @@ pre {
     color:#404040;
     font-size:16px;
 }
-
+.cudaheading {
+    font-family:'Myriad Pro Light';
+    font-size:24pt;
+    color:#0088CE;
+}
 .realstatsheader{
     font-size:20px;
     color:#404040;
@@ -247,8 +253,9 @@ hr.small {
 }
 .post-preview > a > .post-subtitle {
   margin: 0;
-  font-weight: 300;
+  font-weight: 100;
   margin-bottom: 10px;
+  margin-top:10px;
   font-size:20px;
 }
 .post-preview > .post-meta {

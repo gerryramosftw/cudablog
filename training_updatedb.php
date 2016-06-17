@@ -55,7 +55,7 @@ foreach( $_POST as $stuff ) {
         }
 
         $safe_tags = mysqli_real_escape_string($connection, $safe_tags);
-        $postid = 3;
+        $postid = 2;
 //        echo "Post type received was " . $_POST["post_type"];
         if (!isset($_POST["post_type"]) || $_POST["post_type"] =="") {
          echo '<div class="container">';
