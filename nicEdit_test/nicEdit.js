@@ -1366,7 +1366,7 @@ var nicUploadOptions = {
 /* END CONFIG */
 
 var nicUploadButton = nicEditorAdvancedButton.extend({	
-	nicURI : 'https://api.imgur.com/3/image',
+	nicURI : 'http://10.40.139.163/cudablog/nicEdit_test/demos/img.php',
   errorText : 'Failed to upload image',
 
 	addPane : function() {
@@ -1416,15 +1416,26 @@ var nicUploadButton = nicEditorAdvancedButton.extend({
     var xhr = new XMLHttpRequest();
     xhr.open("POST", this.ne.options.uploadURI || this.nicURI);
 
+    console.log("XHR");
+    console.log(xhr);
+
     xhr.onload = function() {
       try {
         var data = JSON.parse(xhr.responseText).data;
+        console.log("TRY DATA");
+        console.log(data);
       } catch(e) {
+        console.log("THIS");
+        console.log(this);
         return this.onError();
       }
       if(data.error) {
+        console.log("DATA ERROR");
+        console.log(data);
         return this.onError(data.error);
       }
+      console.log("ONUPLOADED");
+      console.log(this);
       this.onUploaded(data);
     }.closure(this);
     xhr.onerror = this.onError.closure(this);
