@@ -25,7 +25,6 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato:400,100,700,900" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/style.css">
     <link rel="icon" href="img/index.ico" type="image/x-icon" />
 </head>
 
@@ -52,6 +51,9 @@
                     <li>
                         <a href="upload2.php">Upload an Image</a>
                     </li>
+                  <li>
+    <a class="dropdown-item" href="upload3.php">Upload Video</a>
+                </li>
 
                    <li>
                         <a href="demo4.php">Create a new post</a>

@@ -3,11 +3,12 @@
 $max = 5000000 * 1024;
 $message = '';
 if (isset($_POST['upload'])) {
-    $destination = __DIR__ . '/videos/';
+    $destination = '/var/www/html/publicvideos/';
+//    echo "The destination is: " . $destination;
     if ($_FILES['filename']['error'] == 0) {
         $result = move_uploaded_file($_FILES['filename']['tmp_name'], $destination . $_FILES['filename']['name']);
         if ($result) {
-            $message = $_FILES['filename']['name'] . ' was uploaded successfully.';
+            $message = 'http://10.40.139.163/publicvideos/' . $_FILES['filename']['name'] . ' was uploaded successfully.';
         } else {
             $message = 'Sorry, there was a problem uploading ' .$_FILES['filename']['name'];
         }
