@@ -1463,9 +1463,18 @@ var nicUploadButton = nicEditorAdvancedButton.extend({
   },
 
   onUploaded : function(options) {
+    var test = options;
+    console.log("OPTIONS");
+    console.log(options);
+    console.log("RAN onUPLOADED");
+    console.log(this);
     this.removePane();
-    var src = options.link;
+    var src = options.upload.links.original;
+    console.log("SRC");
+    console.log(src);
     if(!this.im) {
+        console.log("not this.im");
+        console.log(this);
       this.ne.selectedInstance.restoreRng();
       var tmp = 'javascript:nicImTemp();';
       this.ne.nicCommand("insertImage", src);
@@ -1473,9 +1482,11 @@ var nicUploadButton = nicEditorAdvancedButton.extend({
     }
     var w = parseInt(this.ne.selectedInstance.elm.getStyle('width'));
     if(this.im) {
+        console.log("THIS IM");
+        console.log(this.im);
       this.im.setAttributes({
         src : src,
-        width : (w && options.width) ? Math.min(w, options.width) : ''
+        width : (w && options.upload.image.width) ? Math.min(w, options.upload.image.width) : ''
       });
     }
   }

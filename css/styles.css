@@ -11,8 +11,8 @@
   font-family:"Myriad Pro Light";
 }
 p.training {
-    font-size: 20px;
-    font-family: "Myriad Pro Light", Helvetica;
+    font-size: 28px;
+    font-family: "Myriad Pro Light"/*, Helvetica*/;
 }
 pre {
   font-size:16px;
@@ -461,7 +461,7 @@ header {
     background-size: cover;
     -o-background-size: cover;
     background-position: center;
-    background-image: url('https://www.barracuda.com/assets/img/sections/homepage/slides/slide_3.jpg');
+    background-image: url('https://www.barracuda.com/assets/img/sections/homepage/slides/slide_2.jpg');
     text-align: center;
     color: white;
 }
