@@ -1421,7 +1421,7 @@ var nicUploadButton = nicEditorAdvancedButton.extend({
 
     xhr.onload = function() {
       try {
-        var data = JSON.parse(xhr.responseText).data;
+        var data = JSON.parse(xhr.responseText);
         console.log("TRY DATA");
         console.log(data);
       } catch(e) {
@@ -1429,6 +1429,8 @@ var nicUploadButton = nicEditorAdvancedButton.extend({
         console.log(this);
         return this.onError();
       }
+      console.log("DATA")
+      console.log(data);
       if(data.error) {
         console.log("DATA ERROR");
         console.log(data);
@@ -1436,14 +1438,19 @@ var nicUploadButton = nicEditorAdvancedButton.extend({
       }
       console.log("ONUPLOADED");
       console.log(this);
+      console.log(data);
       this.onUploaded(data);
     }.closure(this);
+    console.log("END XHR");
+    console.log(xhr);
     xhr.onerror = this.onError.closure(this);
     xhr.upload.onprogress = function(e) {
       this.setProgress(e.loaded / e.total);
     }.closure(this);
     xhr.setRequestHeader('Authorization', 'Client-ID c37fc05199a05b7');
     xhr.send(fd);
+    console.log("REAL END XHR");
+    console.log(xhr);
   },
 
   setProgress : function(percent) {

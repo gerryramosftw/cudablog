@@ -10,6 +10,10 @@
 * {
   font-family:"Myriad Pro Light";
 }
+p.training {
+    font-size: 20px;
+    font-family: "Myriad Pro Light", Helvetica;
+}
 pre {
   font-size:16px;
   width: 950px;
