@@ -13,7 +13,7 @@
     <title>Barracuda Blog</title>
 
     <!-- Bootstrap Core CSS and Custom CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/public.css" media="all" rel="stylesheet" type="text/css" />
     <!-- Custom CSS -->

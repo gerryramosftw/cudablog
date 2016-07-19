@@ -7,8 +7,11 @@
  <div class="row">
     <div class="col-xs-8 col-xs-offset-2">
         <br><br>
-
-
+   <pre> 
+    <?php
+     print_r($_POST);
+    ?>
+    </pre>
 
     </div>
  </div><!-- END ROW -->

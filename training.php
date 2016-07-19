@@ -15,7 +15,7 @@
             <p class="text-center training">
             <img src="img/Screen%20Shot%202016-06-19%20at%201.46.11%20PM.png" class="img-responsive center-block" style="width:150px; ">
              Email Security Gateway <br>(BESG)<br>
-            <a href="#about" class="btn btn-primary btn-xl page-scroll">Click to Learn</a>
+            <a href="bsf_landing.php" class="btn btn-primary btn-xl page-scroll">Click to Learn</a>
             </p>
             </div><!-- END COL 1 -->
             <div class="col-xs-4">

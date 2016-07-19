@@ -82,7 +82,9 @@
     $content .= $row3["subheading"];
     $content .='</h3>';
     $content .='</a>';
-    $content .='<p class="post-meta">Posted by <a href="#">admin</a> on April 12, 2016</p>';
+    $content .='<p class="post-meta">Posted by <a href="#">admin</a> on ';
+    $content .=$row3["datecreation"];
+    $content .='</p>';
     $content .='<hr /></div>';
     echo $content;
     }
@@ -122,7 +124,9 @@
     $content .= $row2["subheading"];
     $content .='</h3>';
     $content .='</a>';
-    $content .='<p class="post-meta">Posted by <a href="#">Admin</a> on April 12, 2016</p>';
+    $content .='<p class="post-meta">Posted by <a href="#">admin</a> on ';
+    $content .=$row3["datecreation"];
+    $content .='</p>';
     $content .='<hr /></div>';
     echo $content;
     }
@@ -185,17 +189,20 @@
 
     <!-- Troubleshooting Essentials START -->
 
-    <aside class="call-to-action bg-primary">
+    <aside class="bg-primary">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center">
+                <div class="col-xs-12 text-center">
                     <h3>Learn about the Spam Firewall</h3>
-        <div class="col-xs-4 col-xs-offset-2">
-                    <a href="prodinfo.php" class="btn btn-lg btn-light">Understanding the product<br> and troubleshooting essentials</a>
-        </div>
-        <div class="col-xs-4 col-xs-offset-1">
-                    <a href="netapps.php" class="btn btn-lg btn-light">Understanding networking<br> applications</a>
-        </div>
+                    <div class="col-xs-4">
+                    <a href="prodinfo.php" class="btn btn-light">Understanding the product<br>and troubleshooting</a>
+                    </div>
+                    <div class="col-xs-4">
+                    <a href="netapps.php" class="btn btn-light">Understanding networking <br>applications</a>
+                    </div>
+                    <div class="col-xs-4">
+                    <a href="training.php" class="btn btn-light">Training Portal</a>
+                    </div>
                 </div>
             </div>
         </div>

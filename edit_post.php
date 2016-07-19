@@ -74,7 +74,7 @@
         $thedata = mysqli_fetch_assoc($thedata);
         ?>
         <p>Post Title: <br>
-        <textarea name="header" rows="2" cols="80"><?php echo $thedata["sol_title"] ?></textarea>
+        <textarea name="header" rows="2" style="width:100%"><?php echo $thedata["sol_title"] ?></textarea>
         </p>
 <!--        <p>Type of post: <br>
         <span class="label label-danger">NEED to select one!</span>
@@ -82,10 +82,10 @@
         Tech Solution: <input type="radio" name="post_type" value="tech_solution"/>
         </p>
 -->        <p>Subheading: <br>
-        <textarea name="subheading" rows="2" cols="80"><?php echo $thedata["subheading"] ?></textarea>
+        <textarea name="subheading" rows="2" style="width:100%"><?php echo $thedata["subheading"] ?></textarea>
         </p>
         <p>Content:<br />
-        <textarea name="content" rows="15" id="area8" cols="80"><?php echo $thedata["post"] ?></textarea>
+        <textarea name="content" rows="15" id="area8" style="width:100%"><?php echo $thedata["post"] ?></textarea>
       </p>
 <!--        <p>Tags:<br>
         List of tags are: spf, ldap, mysql, inoutq <br>
@@ -99,8 +99,10 @@
             <option value="mysql">MySQL</option>
             <option value="bcas">BCAS</option>
             <option value="bma">BMA</option>
+            <option value="besg">BESG/BSF</option>
             <option value="quarantine">Quarantine</option>
             <option value="behavior">Behavior</option>
+            <option value="bcc">BCC</option>
 
         </select>
 <br><br>

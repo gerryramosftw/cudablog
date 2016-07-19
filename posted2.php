@@ -73,8 +73,8 @@ foreach( $_POST as $stuff ) {
 
         <?php
         $query = "insert into solution_posts (";
-        $query .= "post_type, sol_title, subheading, post, tags) values (";
-        $query .="$postid,'{$safe_header}','{$safe_subheading}', '{$safe_content}','{$safe_tags}')";
+        $query .="post_type, sol_title, subheading, post, tags, datecreation) values (";
+        $query .="$postid,'{$safe_header}','{$safe_subheading}', '{$safe_content}','{$safe_tags}', CURRENT_DATE)";
         mysqli_query($connection, $query);
 //        echo "The completed query is: " . $query;
         ?>

@@ -1,0 +1,14 @@
+--2016-06-20 09:48:28--  https://www.barracuda.com/assets/img/sections/products/bsf/slides/bsf_hero.jpg
+Resolving www.barracuda.com (www.barracuda.com)... 10.8.95.44
+Connecting to www.barracuda.com (www.barracuda.com)|10.8.95.44|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 198769 (194K) [image/jpeg]
+Saving to: ‘bsf_hero.jpg.1’
+
+     0K .......... .......... .......... .......... .......... 25% 7.04M 0s
+    50K .......... .......... .......... .......... .......... 51% 19.3M 0s
+   100K .......... .......... .......... .......... .......... 77% 9.64M 0s
+   150K .......... .......... .......... .......... ....      100% 69.3M=0.02s
+
+2016-06-20 09:48:28 (12.5 MB/s) - ‘bsf_hero.jpg.1’ saved [198769/198769]
+

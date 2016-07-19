@@ -8,7 +8,7 @@
 
 
 * {
-  font-family:"Myriad Pro Light";
+  font-family: "Myriad Pro", "Myriad Pro Light";
 }
 p.training {
     font-size: 28px;
@@ -169,7 +169,6 @@ hr.small {
   background-size: cover;
   -o-background-size: cover;
   margin-bottom: 0px;
-  padding:0 0 100px 0;
 }
 .intro-header .site-heading,
 .intro-header .post-heading,
@@ -242,8 +241,7 @@ hr.small {
 .post-preview > a {
   color: #404040;
   font-size:20px;
-  font-weight:bold;
-  font-family:"Myriad Pro";
+  font-family: "Myriad Pro Light", "Myriad Pro";
 }
 .post-preview > a:hover,
 .post-preview > a:focus {
@@ -436,7 +434,8 @@ body {
     color: #333;
     background-color: rgb(255,255,255);
     margin: 15px 0 30px 0;
- 
+    width: 100%; 
+    font-size:20;
 }
 
 .btn-light:hover,
@@ -455,7 +454,7 @@ header .header-content .header-content-inner h1 {
 header {
     position: relative;
     width: 100%;
-    min-height: 700px;
+    min-height: 500px;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -464,6 +463,34 @@ header {
     background-image: url('https://www.barracuda.com/assets/img/sections/homepage/slides/slide_2.jpg');
     text-align: center;
     color: white;
+}
+header.prodland {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-position: center;
+    background-image: url('https://www.barracuda.com/assets/img/sections/homepage/slides/slide_3.jpg');
+    text-align: center;
+    color: white;
+}
+.gradbg {
+    background-image: url('http://10.40.139.163/cudablog/img/bggrad.svg');
+}
+h1.prodland{
+    font-size:50;
+}
+p.prodland{
+    font-size:20;
+}
+.toc {
+    font-color:white;
+    font-size:25;
+    color:white;
+}
 }
 @media (min-width: 768px)
 header {

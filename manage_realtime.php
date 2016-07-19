@@ -16,7 +16,7 @@
 ?>
 <?php include("layouts/header.php"); ?>
 
-    <div id="main">
+<div id="main">
       <div id="navigation">
     <!-- Navigation -->
     <br>
@@ -26,8 +26,8 @@
     <a href="admin.php">Back to Admin Menu</a>
        </div> <!-- END Admin Sidebar -->
   <div id="page">
-        <h2>Create Subject</h2>
-        <div> 
+        <h2>Manage Real Time Status</h2>
+        <div class="row"> 
         <form action="post_realtime.php" method="post">
           <?php 
             global $connection;
@@ -36,7 +36,7 @@
             $result=mysqli_fetch_assoc($result)
           ?>
           <p>BESS Issues: <br />
-            <textarea name="content" rows="2" cols="40"><?php echo $result["rtpost"] ?></textarea>
+            <textarea name="bess_issue" rows="2" cols="40"><?php echo $result["rtpost"] ?></textarea>
           </p>
           <?php
             global $connection;
@@ -46,7 +46,7 @@
           ?>
 
           <p>ESG Issues: <br />
-            <textarea name="content" rows="2" cols="40"><?php echo $result["rtpost"] ?></textarea>
+            <textarea name="besg_issue" rows="2" cols="40"><?php echo $result["rtpost"] ?></textarea>
           </p>
 
           <?php
@@ -56,7 +56,7 @@
             $result=mysqli_fetch_assoc($result)
           ?>
           <p>Support Issues: <br />
-            <textarea name="content" rows="2" cols="40"><?php echo $result["rtpost"] ?></textarea>
+            <textarea name="support_issue" rows="2" cols="40"><?php echo $result["rtpost"] ?></textarea>
           </p>
 
 
@@ -65,7 +65,16 @@
         <br />
         <a href="manage_content.php">Cancel</a>
         </div> <!-- END Form -->
-    </div> <!-- END 
+    </div> <!-- END ROW -->
+    <div class="row">
+        <div class="col-xs-3">
+            <div class="bg-primary text-center">
+                <h2 class="section-heading">BESS Status:</h2>
+            </div>
+        </div>
+    </div> <!-- END ROW -->
+    </div>
+</div> <!-- END MAIN -->
 <?php
 include("layouts/footer.php");
 ?>

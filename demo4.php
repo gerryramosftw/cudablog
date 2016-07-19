@@ -1,17 +1,38 @@
 
 <?php include("layouts/header.php"); ?>
-  <script type="text/javascript" src="js/nicEdit.js"></script> <script type="text/javascript">
+  <script type="text/javascript" src="nicEdit_test/nicEdit.js"></script> <script type="text/javascript">
 //<![CDATA[
   bkLib.onDomLoaded(function() {
 //        new nicEditor().panelInstance('area1');
 //        new nicEditor({fullPanel : true}).panelInstance('area2');
 //        new nicEditor({fullPanel : true}).panelInstance('area7');
-        new nicEditor({fullPanel : true}).panelInstance('area8');
-        new nicEditor({iconsPath : 'js/nicEditorIcons.gif'}).panelInstance('area3');
+//        new nicEditor({fullPanel : true}).panelInstance('area8');
+        new nicEditor({iconsPath : 'nicEdit_test/nicEditorIcons.gif'}).panelInstance('area2');
         new nicEditor({buttonList : ['fontSize','bold','italic','underline','strikeThrough','subscript','superscript','html','image']}).panelInstance('area4');
         new nicEditor({maxHeight : 100}).panelInstance('area5');
   });
   //]]>
+
+var area1, area2;
+
+function toggleArea1() {
+    if(!area1) {
+        area1 = new nicEditor({fullPanel : true}).panelInstance('myArea1',{hasPanel : true});
+    } else {
+        area1.removeInstance('myArea1');
+        area1 = null;
+    }
+}
+
+function addArea2() {
+    area2 = new nicEditor({fullPanel : true}).panelInstance('myArea2');
+}
+function removeArea2() {
+    area2.removeInstance('myArea2');
+}
+
+bkLib.onDomLoaded(function() { toggleArea1(); });
+
   </script>
 
 <div style="background:#999">
@@ -30,9 +51,11 @@
         Exner Post: <input type="radio" name="post_type" value="exner"/>
         Tech Solution: <input type="radio" name="post_type" value="tech_solution"/>
         </p>
-
         <p>Enter Content:</p>
-        <textarea name="content" rows="10" cols="80" id="area8" style="width:100%"></textarea>
+        <div>
+        <textarea name="content" rows="10" cols="80" id="area2" style="width:100%"></textarea>
+<!--        <button onClick="addArea2();">Add Editor to TEXTAREA</button> <button onClick="removeArea2();">Remove Editor from TEXTAREA</button>
+    -->    </div>
         <p>Select tags:</p>
         <select size="8" name="tagslist[]" id="TagsSelected" multiple="multiple" class="lstSelected">
             <option value="ldap">LDAP</option>
@@ -41,13 +64,14 @@
             <option value="mysql">MySQL</option>
             <option value="bcas">BCAS</option>
             <option value="bma">BMA</option>
+            <option value="besg">BESG/BSF</option>
             <option value="quarantine">Quarantine</option>
             <option value="behavior">Behavior</option>
-
+            <option value="bcc">BCC</option>
         </select>
         <br><br>
-        <input type="submit" value="Submit">
-        </form>
+       <input type="submit" value="Submit">
+       </form>
     </div>
  </div><!-- END ROW -->
 </div>
